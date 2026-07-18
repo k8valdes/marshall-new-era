@@ -1,0 +1,62 @@
+# Pages CMS configuration — https://pagescms.org
+# Connect this repo at app.pagescms.org to give board members a friendly
+# editing UI for events and news (no git knowledge needed).
+
+media:
+  input: src/content/news
+  output: .
+
+content:
+  - name: events
+    label: Events
+    type: collection
+    path: src/content/events
+    filename: '{fields.title}-{year}-{month}.md'
+    view:
+      fields: [title, date, location]
+      sort: [date]
+    fields:
+      - name: title
+        label: Event title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: time
+        label: Time (e.g. "6:00 PM")
+        type: string
+      - name: location
+        label: Location
+        type: string
+      - name: recurring
+        label: Repeats (e.g. "3rd Monday of every month")
+        type: string
+      - name: body
+        label: Details
+        type: rich-text
+
+  - name: news
+    label: News
+    type: collection
+    path: src/content/news
+    filename: '{fields.title}.md'
+    view:
+      fields: [title, date]
+      sort: [date]
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: excerpt
+        label: Short summary (shown on cards)
+        type: string
+      - name: body
+        label: Post
+        type: rich-text

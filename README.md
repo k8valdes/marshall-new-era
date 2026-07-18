@@ -1,43 +1,28 @@
-# Astro Starter Kit: Minimal
+# Marshall–New Era Neighborhood Association
+
+The website and brand system for [MNENA](https://marshallnewera.org) — neighbors in Midtown Sacramento. *This is our neighborhood. Let's shape it together.*
+
+## What's in here
+
+| Path | What it is |
+| :-- | :-- |
+| `src/` | The [Astro](https://astro.build) website (deployed to GitHub Pages) |
+| `src/content/events/`, `src/content/news/` | Site content as Markdown — editable via [Pages CMS](https://pagescms.org) (`.pages.yml`) |
+| `brand/tokens.json` | **Single source of truth** for the brand: colors, type, spacing, logo rules, voice |
+| `brand/SOCIAL-CONTEXT.md` | Paste-into-AI brief for generating on-brand social posts |
+| `brand/assets/` | Logo files + original brand guideline PDFs |
+| `docs/VOLUNTEER-GUIDE.md` | How non-technical volunteers update the site |
+| `docs/CUTOVER-CHECKLIST.md` | Steps to point marshallnewera.org here when the board's ready |
+| `archive/wordpress-2026-07/` | Full content archive of the old WordPress site |
+
+## Working on the site
 
 ```sh
-npm create astro@latest -- --template minimal
+npm install
+npm run dev        # local dev server
+npm run build      # regenerates tokens.css from tokens.json, then builds
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+**Changing brand values?** Edit `brand/tokens.json` only — `src/styles/tokens.css` and the public [/brand](https://kvaldes44.github.io/marshall-new-era/brand/) style-guide page are generated from it.
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Pushing to `main` auto-deploys via GitHub Actions → GitHub Pages.
