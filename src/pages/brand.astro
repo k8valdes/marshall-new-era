@@ -1,0 +1,235 @@
+---
+import Base from '../layouts/Base.astro';
+import tokens from '../../brand/tokens.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const primary = Object.entries(tokens.color.primary);
+const secondary = Object.entries(tokens.color.secondary);
+const pairs = tokens.color.accessiblePairs;
+const scale = Object.entries(tokens.typography.scale);
+const spacing = Object.entries(tokens.spacing.scale);
+const radii = Object.entries(tokens.radius).filter(([k]) => k !== 'note');
+
+const fontFor = (key: string) =>
+  key === 'heading' ? 'var(--font-heading)' : key === 'accent' ? 'var(--font-accent)' : 'var(--font-body)';
+---
+
+<Base title="Brand Guide" description="The MNENA brand — colors, typography, logo rules, and voice. Token-based and public, so everything we make looks like us.">
+  <section class="section">
+    <div class="container">
+      <p class="accent-script">Look the part</p>
+      <h1>MNENA Brand Guide</h1>
+      <p class="narrow">
+        Everything here is generated from a single <a href="https://github.com/kvaldes44/marshall-new-era/blob/main/brand/tokens.json">tokens file</a> —
+        the same values that style this website. Making a flyer, a post, or a
+        lawn sign? Use these exact colors, fonts, and rules and it'll look
+        like <em>us</em>. Version {tokens.meta.version} · updated {tokens.meta.updated}.
+      </p>
+
+      <h2>Colors — Primary</h2>
+      <div class="swatch-grid">
+        {primary.map(([key, c]: [string, any]) => (
+          <div class="swatch card">
+            <div class="chip" style={`background:${c.value}`}></div>
+            <strong>{c.name}</strong>
+            <code>{c.value}</code>
+            <p>{c.usage}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2>Colors — Secondary</h2>
+      <div class="swatch-grid">
+        {secondary.map(([key, c]: [string, any]) => (
+          <div class="swatch card">
+            <div class="chip" style={`background:${c.value}; ${c.value === '#FFFFFF' ? 'border:1px solid #ddd;' : ''}`}></div>
+            <strong>{c.name}</strong>
+            <code>{c.value}</code>
+            <p>{c.usage}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2>Accessible pairings</h2>
+      <p class="narrow">These combinations pass WCAG AA. Stick to them for any text.</p>
+      <div class="pair-grid">
+        {pairs.map((p: any) => (
+          <div class="pair" style={`background:${p.bg}; color:${p.fg}; ${p.bg === '#FFFFFF' ? 'border:1px solid #ddd;' : ''}`}>
+            <strong>Aa</strong>
+            <span>{p.fg} on {p.bg}</span>
+            <span>{p.contrast} · {p.use}</span>
+          </div>
+        ))}
+      </div>
+      <div class="card" style="margin-top: var(--space-lg); border-left: 6px solid var(--color-poppy-orange);">
+        <strong>Avoid:</strong>
+        <ul style="margin-bottom:0;">
+          {tokens.color.avoid.map((a: string) => <li>{a}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <h2>Typography</h2>
+      <p class="narrow">
+        Three typefaces, three jobs: <strong>{tokens.typography.fonts.heading.family}</strong> for
+        titles, <strong>{tokens.typography.fonts.body.family}</strong> for everything readable, and
+        <strong>{tokens.typography.fonts.accent.family}</strong> for short, warm script moments only.
+      </p>
+      <div class="type-list">
+        {scale.map(([key, t]: [string, any]) => (
+          <div class="type-row">
+            <code>{key} · {t.size}</code>
+            <span style={`font-family:${fontFor(t.font)}; font-size:${t.size}; font-weight:${t.weight}; ${t.transform ? `text-transform:${t.transform}; letter-spacing:${t.letterSpacing};` : ''}`}>
+              Welcome to the neighborhood
+            </span>
+            {t.note && <p class="note">{t.note}</p>}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Logo</h2>
+      <div class="logo-grid">
+        <div class="card" style="text-align:center;">
+          <img src={`${base}/brand/logo-badge.png`} alt="MNENA badge logo" width="140" />
+          <p><strong>Badge</strong> — the primary mark</p>
+        </div>
+        <div class="card" style="text-align:center;">
+          <img src={`${base}/brand/logo-circle-gold.png`} alt="MNENA badge in gold circle" width="140" />
+          <p><strong>Gold circle</strong> — avatars &amp; favicons</p>
+        </div>
+        <div class="card" style="text-align:center;">
+          <img src={`${base}/brand/logo-horizontal.png`} alt="MNENA horizontal lockup with wordmark" width="260" />
+          <p><strong>Horizontal lockup</strong> — site header, documents, banners</p>
+        </div>
+      </div>
+      <div class="split-2">
+        <div>
+          <h3>Rules</h3>
+          <ul>
+            {tokens.logo.rules.map((r: string) => <li>{r}</li>)}
+          </ul>
+        </div>
+        <div>
+          <h3>Space &amp; size</h3>
+          <p>{tokens.logo.clearSpace}</p>
+          <p>Minimum size: {tokens.logo.minSize.digital} on screen; {tokens.logo.minSize.print} in print.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <h2>Illustration style</h2>
+      <p class="narrow">{tokens.illustration.style}. {tokens.illustration.composition}.</p>
+      <div class="split-2">
+        <div>
+          <h3>Motifs</h3>
+          <ul>
+            {tokens.illustration.motifs.map((m: string) => <li>{m}</li>)}
+          </ul>
+        </div>
+        <div>
+          <h3>Photography</h3>
+          <p>{tokens.illustration.photography}</p>
+          <h3>Spacing &amp; corners</h3>
+          <p>
+            Spacing scale: {spacing.map(([k, v]) => `${k} ${v}`).join(' · ')}<br />
+            Radii: {radii.map(([k, v]) => `${k} ${v}`).join(' · ')} — {tokens.radius.note}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-teal on-dark">
+    <div class="container">
+      <h2>Voice</h2>
+      <p>We sound: <strong>{tokens.voice.attributes.join(' · ')}</strong></p>
+      <div class="split-2">
+        <div>
+          <h3>✅ Sounds like us</h3>
+          <ul>
+            {tokens.voice.sounds_like.map((s: string) => <li>"{s}"</li>)}
+          </ul>
+        </div>
+        <div>
+          <h3>❌ Not like us</h3>
+          <ul>
+            {tokens.voice.not_like.map((s: string) => <li>"{s}"</li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .swatch-grid,
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+  .swatch .chip {
+    height: 72px;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-sm);
+  }
+  .swatch code {
+    display: block;
+    color: var(--color-link);
+  }
+  .swatch p {
+    font-size: 0.85rem;
+    margin: var(--space-xs) 0 0;
+  }
+  .pair-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--space-md);
+  }
+  .pair {
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .pair strong {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+  }
+  .pair span {
+    font-size: 0.78rem;
+  }
+  .type-list {
+    display: grid;
+    gap: var(--space-lg);
+  }
+  .type-row code {
+    display: block;
+    color: var(--color-link);
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+  }
+  .type-row .note {
+    font-size: 0.85rem;
+    color: var(--color-link);
+    margin: 2px 0 0;
+  }
+  .split-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-xl);
+    margin-top: var(--space-lg);
+  }
+</style>

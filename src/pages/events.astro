@@ -1,0 +1,93 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import EventCard from '../components/EventCard.astro';
+
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+
+const all = (await getCollection('events')).sort(
+  (a, b) => a.data.date.valueOf() - b.data.date.valueOf()
+);
+const upcoming = all.filter((e) => e.data.date >= today);
+const past = all.filter((e) => e.data.date < today).reverse().slice(0, 6);
+---
+
+<Base title="Events" description="Board meetings, cleanups, block parties, National Night Out, and the December holiday party — all MNENA events.">
+  <section class="section">
+    <div class="container">
+      <p class="accent-script">Get out and meet each other</p>
+      <h1>Events</h1>
+      <p class="narrow">
+        Throughout the year we host board meetings, quarterly cleanups, block
+        parties, and holiday gatherings — often with our friends at the
+        Boulevard Park Neighborhood Association. Everything is open to everyone.
+      </p>
+
+      <h2>Coming up</h2>
+      <div class="event-list">
+        {upcoming.length > 0
+          ? upcoming.map((event) => <EventCard event={event} full />)
+          : <p>Nothing on the calendar right now — check back soon or follow us on <a href="https://www.instagram.com/marshallnewera/">Instagram</a>.</p>}
+      </div>
+
+      {past.length > 0 && (
+        <>
+          <h2 style="margin-top: var(--space-2xl);">Recently</h2>
+          <div class="event-list">
+            {past.map((event) => <EventCard event={event} />)}
+          </div>
+        </>
+      )}
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container narrow">
+      <h2>The regulars</h2>
+      <dl class="regulars">
+        <dt>🗓 Monthly board meetings</dt>
+        <dd>
+          3rd Monday of each month (except December), 6:00 pm at the Society
+          Church building, 2711 B St. Finger-food potluck, City Police and
+          agency updates, and everyone is welcome. Agenda requests:
+          <a href="mailto:info@marshallnewera.org">info@marshallnewera.org</a>.
+        </dd>
+        <dt>🧹 Quarterly neighborhood cleanups</dt>
+        <dd>
+          Every quarter, somewhere in the neighborhood. We start at 8:30 am
+          with coffee and bagels, then supply everything you need — gloves,
+          pickers, trash bags, and friends.
+        </dd>
+        <dt>🌭 National Night Out</dt>
+        <dd>
+          1st Tuesday in August. We join Midtown's other associations for a
+          progressive dinner that brings back a true sense of community.
+        </dd>
+        <dt>🎄 Holiday party</dt>
+        <dd>
+          A great party in December — potluck, a very small amount of
+          "business", and a lot of talking about next year's plans.
+        </dd>
+      </dl>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .event-list {
+    display: grid;
+    gap: var(--space-lg);
+    max-width: 46rem;
+  }
+  .regulars dt {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-deep-teal);
+    margin-top: var(--space-lg);
+  }
+  .regulars dd {
+    margin: var(--space-xs) 0 0;
+  }
+</style>

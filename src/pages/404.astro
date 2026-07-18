@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Base title="Page not found">
+  <section class="section">
+    <div class="container narrow" style="text-align: center;">
+      <p class="accent-script">Well, this is awkward</p>
+      <h1>404 — wrong turn</h1>
+      <p>
+        This page moved away (or never lived here). Happens to the best blocks.
+      </p>
+      <a class="btn btn-primary" href={`${base}/`}>Back home</a>
+    </div>
+  </section>
+</Base>

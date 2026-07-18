@@ -1,0 +1,81 @@
+---
+import { render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  event: CollectionEntry<'events'>;
+  full?: boolean; // render body content too
+}
+
+const { event, full = false } = Astro.props;
+const { data } = event;
+const { Content } = full ? await render(event) : { Content: null };
+
+// Frontmatter dates parse as UTC midnight — format in UTC so days don't shift.
+const dateFmt = data.date.toLocaleDateString('en-US', {
+  weekday: 'long',
+  month: 'long',
+  day: 'numeric',
+  timeZone: 'UTC',
+});
+---
+
+<article class="card event-card">
+  <div class="date-chip">
+    <span class="month">{data.date.toLocaleDateString('en-US', { month: 'short', timeZone: 'UTC' })}</span>
+    <span class="day">{data.date.getUTCDate()}</span>
+  </div>
+  <div>
+    <h3>{data.title}</h3>
+    <p class="event-meta">
+      {dateFmt}{data.time && ` · ${data.time}`}
+      {data.location && <><br />{data.location}</>}
+    </p>
+    {data.recurring && <p class="recurring">Repeats: {data.recurring}</p>}
+    {Content && <div class="prose"><Content /></div>}
+    {data.cta && <a class="btn btn-primary" href={data.cta.href}>{data.cta.label}</a>}
+  </div>
+</article>
+
+<style>
+  .event-card {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+  }
+  .event-card h3 {
+    margin-bottom: var(--space-xs);
+  }
+  .date-chip {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--color-deep-teal);
+    color: var(--color-cream);
+    border-radius: var(--radius-md);
+    padding: var(--space-sm) var(--space-md);
+    min-width: 3.6rem;
+  }
+  .date-chip .month {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-sun-gold);
+    font-weight: 700;
+  }
+  .date-chip .day {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  .event-meta {
+    margin-bottom: var(--space-xs);
+  }
+  .recurring {
+    font-size: 0.875rem;
+    color: var(--color-link);
+    font-weight: 600;
+  }
+</style>

@@ -1,0 +1,73 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Join Us" description="Become a voting member of the Marshall–New Era Neighborhood Association — $20/yr for households, $35 for businesses.">
+  <section class="section">
+    <div class="container narrow">
+      <p class="accent-script">Come on in</p>
+      <h1>Join the neighborhood association</h1>
+      <p>
+        Membership is annual (January–December) and gets you a vote in how the
+        neighborhood shapes itself. Join after September 1st and your
+        membership runs through the following year.
+      </p>
+
+      <div class="tiers">
+        <div class="card tier">
+          <p class="section-label">Individual / Household</p>
+          <p class="price">$20<span>/yr</span></p>
+          <a class="btn btn-primary" href="https://drive.google.com/file/d/1GuBeT-BSlPY9_J_U7fQ-qNafi_OWrVCW/view?usp=sharing">New member application</a>
+        </div>
+        <div class="card tier">
+          <p class="section-label">Business</p>
+          <p class="price">$35<span>/yr</span></p>
+          <a class="btn btn-primary" href="https://drive.google.com/file/d/1GuBeT-BSlPY9_J_U7fQ-qNafi_OWrVCW/view?usp=sharing">New member application</a>
+        </div>
+        <div class="card tier">
+          <p class="section-label">Already a member?</p>
+          <p class="price" style="font-size:1.4rem; padding-top: 0.6rem;">Renew online</p>
+          <a class="btn btn-secondary" href="https://www.paypal.com/ncp/payment/C8ZQYFJDDZURQ">Renew via PayPal</a>
+        </div>
+      </div>
+
+      <h2>What your $20 does</h2>
+      <ul>
+        <li>Advocacy with the City on the issues that hit our blocks first</li>
+        <li>Crime and prevention updates straight from the Police Department</li>
+        <li>Regular meetings with your Councilmember and Assemblymember</li>
+        <li>Building-permit tracking, so big projects don't surprise you</li>
+        <li>Quarterly cleanups, the community garden, and honestly great parties</li>
+      </ul>
+
+      <p>
+        Not ready yet? Email <a href="mailto:info@marshallnewera.org?subject=Add me to the newsletter">info@marshallnewera.org</a>
+        to get 2–3 emails a month on what's happening — no membership needed.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .tiers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-lg);
+    margin-block: var(--space-xl);
+  }
+  .tier {
+    text-align: center;
+  }
+  .price {
+    font-family: var(--font-heading);
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--color-deep-teal);
+    margin: var(--space-sm) 0 var(--space-md);
+  }
+  .price span {
+    font-size: 1rem;
+    color: var(--color-text-primary);
+    font-weight: 400;
+  }
+</style>

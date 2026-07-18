@@ -1,0 +1,56 @@
+---
+import Base from '../layouts/Base.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Base title="About" description="Who the Marshall–New Era Neighborhood Association is, what we do, and the story of the historic Marshall School.">
+  <section class="section">
+    <div class="container narrow">
+      <p class="accent-script">Nice to meet you</p>
+      <h1>About MNENA</h1>
+      <p>
+        Midtown Sacramento is a great place to live, and Marshall–New Era is one
+        of those wonderful neighborhoods. MNENA members are your neighbors — we
+        all live here, we all love it here, and we're passionate about making
+        this a neighborhood every resident can enjoy.
+      </p>
+
+      <h2>What we actually do</h2>
+      <ul>
+        <li>Advocate on your behalf with the City on homelessness and other issues</li>
+        <li>Keep you updated by the Police Department on crime and prevention</li>
+        <li>Meet regularly with your Councilmember and Assemblymember (or their staff)</li>
+        <li>Track building permits so we can flag major projects headed your way</li>
+        <li>Organize quarterly neighborhood cleanups</li>
+        <li>Run the New Era Community Garden</li>
+        <li>Throw block parties, National Night Out dinners, and a December holiday party</li>
+      </ul>
+      <p>
+        <a class="btn btn-primary" href={`${base}/join/`}>Join us — $20/yr</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container narrow">
+      <p class="section-label">Neighborhood history</p>
+      <h2>The Old Marshall School</h2>
+      <ul>
+        <li>Marshall School is the <strong>oldest school in Sacramento</strong>, built in 1903</li>
+        <li>Designed by architect Rudolf Herold — who also designed old City Hall</li>
+        <li>Listed as a historic building with the City of Sacramento; the style is American Classical Revival</li>
+        <li>Served as an SCUSD elementary school until 1976, when it closed over building-code standards</li>
+        <li>Renovated in 1983 and reopened as an Adult Education Center until 2009</li>
+        <li>Last used briefly as a Montessori school in 2009</li>
+      </ul>
+      <h3>Where things stand</h3>
+      <p>
+        In January 2023 the school district completed a sale of the property.
+        The buyer, Reynen &amp; Bardis Homes, has asked for feedback from
+        neighbors — send any thoughts or visions to
+        <a href="mailto:info@rbhomes.com">info@rbhomes.com</a>.
+      </p>
+    </div>
+  </section>
+</Base>

@@ -7,11 +7,15 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "node scripts/build-tokens.mjs && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "tokens": "node scripts/build-tokens.mjs"
   },
   "dependencies": {
+    "@fontsource-variable/dancing-script": "^5.2.8",
+    "@fontsource-variable/open-sans": "^5.2.7",
+    "@fontsource-variable/source-serif-4": "^5.2.9",
     "astro": "^7.1.1"
   }
 }

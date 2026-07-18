@@ -1,0 +1,38 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const posts = (await getCollection('news')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<Base title="News" description="Updates, announcements, and stories from the Marshall–New Era neighborhood.">
+  <section class="section">
+    <div class="container narrow">
+      <p class="accent-script">Hot off the press</p>
+      <h1>Neighborhood news</h1>
+      <div class="post-list">
+        {posts.map((post) => (
+          <article class="card">
+            <p class="section-label">
+              {post.data.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}
+            </p>
+            <h2 style="font-size: 1.5rem;">
+              <a href={`${base}/news/${post.id}/`}>{post.data.title}</a>
+            </h2>
+            {post.data.excerpt && <p>{post.data.excerpt}</p>}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .post-list {
+    display: grid;
+    gap: var(--space-lg);
+  }
+</style>

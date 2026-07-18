@@ -1,0 +1,27 @@
+---
+// River-wave section divider — brand motif from the badge logo.
+interface Props {
+  color?: string; // fill of the wave (the section it transitions FROM)
+  flip?: boolean;
+}
+const { color = 'var(--color-surface)', flip = false } = Astro.props;
+---
+
+<div class="wave" style={flip ? 'transform: scaleY(-1);' : undefined} aria-hidden="true">
+  <svg viewBox="0 0 1440 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M0,32 C240,64 480,0 720,24 C960,48 1200,8 1440,36 L1440,0 L0,0 Z"
+      style={`fill:${color};`}></path>
+  </svg>
+</div>
+
+<style>
+  .wave {
+    line-height: 0;
+  }
+  .wave svg {
+    display: block;
+    width: 100%;
+    height: 48px;
+  }
+</style>
