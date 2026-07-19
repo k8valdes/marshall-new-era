@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
+import gardenArt from '../assets/illustrations/community-garden.png';
 ---
 
 <Base title="Community Garden" description="The New Era Community Garden at 26th & B — 41 plots, a Friend of the Garden program, and potlucks. Reborn in 2024.">
@@ -7,6 +9,14 @@ import Base from '../layouts/Base.astro';
     <div class="container narrow">
       <p class="accent-script">Reborn & blooming</p>
       <h1>New Era Community Garden</h1>
+      <div class="img-frame" style="margin-bottom: var(--space-lg); box-shadow: var(--shadow-card);">
+        <Image
+          src={gardenArt}
+          alt="Flat vector illustration of the community garden — rows of tomatoes and greens, a wooden Community Garden sign with the MNENA badge, downtown skyline behind"
+          width={880}
+          loading="eager"
+        />
+      </div>
       <p>
         Our community garden has been reborn! After two years sitting vacant,
         MNENA secured a 5-year lease on the property and restarted the garden

@@ -3,13 +3,17 @@
   --color-deep-teal: #004447;
   --color-river-teal: #479FB3;
   --color-leaf-green: #5DA145;
-  --color-cream: #F7ECCC;
+  --color-white: #FFFFFF;
   --color-poppy-orange: #EC8A1F;
   --color-sun-gold: #F3CB4A;
   --color-sky-blue: #7CD1E8;
+  --color-cream: #F7ECCC;
   --color-sand: #FBDD9F;
-  --color-white: #FFFFFF;
-  --color-background: #F7ECCC;
+  --color-seafoam-sky: #7AB6A4;
+  --color-deep-forest: #014D43;
+  --color-mid-green: #368A59;
+  --color-background: #FFFFFF;
+  --color-background-soft: #EDF4F1;
   --color-surface: #FFFFFF;
   --color-surface-inverse: #004447;
   --color-text-primary: #1A2E2C;
@@ -18,6 +22,7 @@
   --color-cta-primary: #EC8A1F;
   --color-cta-primary-text: #3A2000;
   --color-focus-ring: #479FB3;
+  --color-image-overlay: linear-gradient(180deg, rgba(0,68,71,0) 45%, rgba(0,68,71,0.55) 100%);
   --font-heading: 'Source Serif 4 Variable', 'Source Serif 4', Georgia, serif;
   --font-body: 'Open Sans Variable', 'Open Sans', Helvetica Neue, Arial, sans-serif;
   --font-accent: 'Dancing Script Variable', 'Dancing Script', cursive;

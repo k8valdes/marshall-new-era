@@ -1,8 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import Wave from '../components/Wave.astro';
 import EventCard from '../components/EventCard.astro';
+import cityscape from '../assets/illustrations/cityscape.png';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const today = new Date();
@@ -34,7 +36,14 @@ const news = (await getCollection('news'))
           <a class="btn btn-secondary" href={`${base}/events/`}>See what's happening</a>
         </div>
       </div>
-      <img class="hero-badge" src={`${base}/brand/logo-circle-gold.png`} alt="MNENA badge in a gold circle" width="220" height="220" />
+      <div class="img-frame hero-art">
+        <Image
+          src={cityscape}
+          alt="Flat vector illustration of Midtown Sacramento — the gold Tower Bridge and Capitol among layered green trees and neighborhood homes"
+          width={880}
+          loading="eager"
+        />
+      </div>
     </div>
   </section>
   <Wave color="var(--color-surface-inverse)" />
@@ -50,7 +59,7 @@ const news = (await getCollection('news'))
     </div>
   </section>
 
-  <section class="section section-white">
+  <section class="section section-soft">
     <div class="container split">
       <div>
         <p class="section-label">Who we are</p>
@@ -87,10 +96,17 @@ const news = (await getCollection('news'))
       <h2>Latest from the neighborhood</h2>
       <div class="grid-3">
         {news.map((post) => (
-          <article class="card">
-            <p class="section-label">{post.data.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}</p>
-            <h3><a href={`${base}/news/${post.id}/`}>{post.data.title}</a></h3>
-            <p>{post.data.excerpt}</p>
+          <article class="card news-card">
+            {post.data.image && (
+              <div class="img-frame overlay news-thumb">
+                <Image src={post.data.image} alt="" width={640} />
+              </div>
+            )}
+            <div class="news-body">
+              <p class="section-label">{post.data.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}</p>
+              <h3><a href={`${base}/news/${post.id}/`}>{post.data.title}</a></h3>
+              <p>{post.data.excerpt}</p>
+            </div>
           </article>
         ))}
       </div>
@@ -136,12 +152,26 @@ const news = (await getCollection('news'))
     flex-wrap: wrap;
     margin-top: var(--space-lg);
   }
-  .hero-badge {
-    flex-shrink: 0;
-    border-radius: 50%;
+  .hero-art {
+    flex: 1 1 340px;
+    max-width: 480px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-raised);
   }
   @media (max-width: 800px) {
-    .hero-badge { display: none; }
+    .hero-inner { flex-direction: column; }
+    .hero-art { max-width: 100%; }
+  }
+  .news-card {
+    padding: 0;
+    overflow: hidden;
+  }
+  .news-thumb {
+    border-radius: 0;
+    aspect-ratio: 16 / 9;
+  }
+  .news-body {
+    padding: var(--space-lg);
   }
   .grid-3 {
     display: grid;

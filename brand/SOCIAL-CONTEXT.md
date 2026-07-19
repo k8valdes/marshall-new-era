@@ -41,13 +41,21 @@ Hashtags (3–5, at the end): `#NewEraNeighbors #SacramentoLiving #MidtownPride 
 | Deep Teal | `#004447` | Anchor/background color, text on light |
 | River Teal | `#479FB3` | Secondary surfaces, water |
 | Leaf Green | `#5DA145` | Trees, buildings, nature |
-| Cream | `#F7ECCC` | Warm backgrounds, sky |
-| Sun Gold | `#F3CB4A` | Tower Bridge, highlights |
+| Sun Gold | `#F3CB4A` | Tower Bridge, Marshall School, highlights |
 | Poppy Orange | `#EC8A1F` | CTAs and pops — sparingly |
 | Sky Blue | `#7CD1E8` | Water highlights, accents |
-| Sand | `#FBDD9F` | Paths, alt background |
+| Cream | `#F7ECCC` | **Accent only**: clouds, building highlights, text on teal — not a background |
+| Sand | `#FBDD9F` | Paths and roads in illustrations |
 
-Text must be readable: deep teal on cream, or cream/gold on deep teal. Never white text on green, gold, or orange.
+Illustration-specific colors (from our final brand artwork):
+
+| Color | Hex | Role |
+|---|---|---|
+| Seafoam Sky | `#7AB6A4` | The illustration sky — muted seafoam teal |
+| Deep Forest | `#014D43` | Darkest tree/skyline silhouettes |
+| Mid Green | `#368A59` | Mid-layer canopies and lawns |
+
+Text must be readable: deep teal on white, or cream/gold on deep teal. Never white text on green, gold, or orange. **Cream is deprioritized** — it's a warm accent (clouds, chips, script moments), not the base of a composition.
 
 ## Fonts (for graphics with text)
 
@@ -57,14 +65,16 @@ Text must be readable: deep teal on cream, or cream/gold on deep teal. Never whi
 
 ## Image style — the important part
 
-Our look is **flat vector illustration**: layered silhouettes, no outlines, no gradients, no 3D, no photorealism. Think mid-century travel poster meets modern civic pride.
+Our look is **flat vector illustration**: layered silhouettes, no outlines, no gradients, no 3D, no photorealism. A modern take on the mid-century travel poster, looking at the Midtown Sacramento cityscape. Our two hero subjects are the **gold Tower Bridge** and the **historic Marshall School** (gold, American Classical Revival, arched fanlight window) — they anchor our corner of Midtown, with the Capitol dome in the background skyline.
+
+**Reference artwork** lives in the repo at `src/assets/illustrations/` (cityscape, marshall-school, community-garden, homes-bridge) and on the public brand page — attach one to your AI request as a style reference whenever possible; it beats any text description.
 
 **Base image prompt — start from this and adapt:**
 
-> Flat vector illustration, mid-century travel-poster style, no outlines, no gradients. Midtown Sacramento neighborhood scene: [SUBJECT]. Layered composition back to front: cream sky (#F7ECCC), dark teal downtown skyline silhouette (#004447), layered tree canopies in greens (#5DA145 and darker teals), Victorian and craftsman homes in cream/gold/teal, gold path or road in foreground (#F3CB4A / #FBDD9F). Palette strictly limited to: #004447, #479FB3, #5DA145, #F7ECCC, #F3CB4A, #EC8A1F, #7CD1E8, #FBDD9F. Greens dominate; gold reserved for landmarks and paths.
+> Flat vector illustration, mid-century travel-poster style, no outlines, no gradients. Midtown Sacramento neighborhood scene: [SUBJECT]. Layered composition back to front: muted seafoam-teal sky (#7AB6A4) with cream clouds (#F7ECCC), deep teal downtown skyline silhouette (#004447 / #014D43), layered tree canopies in greens (#5DA145, #368A59, darker teals), Victorian and craftsman homes in cream/gold/teal, gold path or road in foreground (#F3CB4A / #FBDD9F). Palette strictly limited to: #004447, #014D43, #368A59, #5DA145, #479FB3, #7AB6A4, #F7ECCC, #F3CB4A, #EC8A1F, #7CD1E8, #FBDD9F. Greens dominate; the sky is seafoam teal, never cream; gold reserved for landmarks and paths.
 
 **Recognizable motifs** (pick 1–2 per image, don't stack them all):
-Tower Bridge in gold · Capitol dome in cream · Marshall School with its fanlight arch window · community garden rows · river waves · tree-lined streets with Victorians · cream clouds
+Tower Bridge in gold · Marshall School with its fanlight arch window · Capitol dome in cream · community garden rows · river waves · tree-lined streets with Victorians · cream clouds
 
 **Variation rules — this is how we stop every post looking the same:**
 - Rotate which color leads: teal-dominant one post, cream-dominant the next, gold accent the one after

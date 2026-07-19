@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -15,14 +16,21 @@ const posts = (await getCollection('news')).sort(
       <h1>Neighborhood news</h1>
       <div class="post-list">
         {posts.map((post) => (
-          <article class="card">
-            <p class="section-label">
-              {post.data.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}
-            </p>
-            <h2 style="font-size: 1.5rem;">
-              <a href={`${base}/news/${post.id}/`}>{post.data.title}</a>
-            </h2>
-            {post.data.excerpt && <p>{post.data.excerpt}</p>}
+          <article class="card news-row">
+            {post.data.image && (
+              <div class="img-frame overlay news-row-thumb">
+                <Image src={post.data.image} alt="" width={480} />
+              </div>
+            )}
+            <div>
+              <p class="section-label">
+                {post.data.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}
+              </p>
+              <h2 style="font-size: 1.5rem;">
+                <a href={`${base}/news/${post.id}/`}>{post.data.title}</a>
+              </h2>
+              {post.data.excerpt && <p style="margin-bottom: 0;">{post.data.excerpt}</p>}
+            </div>
           </article>
         ))}
       </div>
@@ -34,5 +42,18 @@ const posts = (await getCollection('news')).sort(
   .post-list {
     display: grid;
     gap: var(--space-lg);
+  }
+  .news-row {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: flex-start;
+  }
+  .news-row-thumb {
+    flex: 0 0 180px;
+    aspect-ratio: 4 / 3;
+  }
+  @media (max-width: 560px) {
+    .news-row { flex-direction: column; }
+    .news-row-thumb { width: 100%; flex-basis: auto; }
   }
 </style>

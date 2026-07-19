@@ -142,8 +142,32 @@ img {
   background: var(--color-surface-inverse);
 }
 
-.section-white {
-  background: var(--color-surface);
+.section-soft {
+  background: var(--color-background-soft);
+}
+
+/* ---------- Images ---------- */
+.img-frame {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  line-height: 0;
+}
+
+.img-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* deep-teal gradient overlay — unifies mixed photography (not for illustrations) */
+.img-frame.overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-image-overlay);
+  pointer-events: none;
 }
 
 /* ---------- Prose (markdown content) ---------- */

@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
+import marshallSchool from '../assets/illustrations/marshall-school.png';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
@@ -32,10 +34,17 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     </div>
   </section>
 
-  <section class="section section-white">
+  <section class="section section-soft">
     <div class="container narrow">
       <p class="section-label">Neighborhood history</p>
       <h2>The Old Marshall School</h2>
+      <div class="img-frame" style="margin-bottom: var(--space-lg); box-shadow: var(--shadow-card);">
+        <Image
+          src={marshallSchool}
+          alt="Flat vector illustration of the historic Marshall School — a gold American Classical Revival building with an arched fanlight window, the Tower Bridge behind"
+          width={880}
+        />
+      </div>
       <ul>
         <li>Marshall School is the <strong>oldest school in Sacramento</strong>, built in 1903</li>
         <li>Designed by architect Rudolf Herold — who also designed old City Hall</li>

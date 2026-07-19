@@ -1,14 +1,27 @@
 ---
+import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import tokens from '../../brand/tokens.json';
+import cityscape from '../assets/illustrations/cityscape.png';
+import marshallSchool from '../assets/illustrations/marshall-school.png';
+import communityGarden from '../assets/illustrations/community-garden.png';
+import homesBridge from '../assets/illustrations/homes-bridge.png';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const primary = Object.entries(tokens.color.primary);
 const secondary = Object.entries(tokens.color.secondary);
+const illustrationColors = Object.entries(tokens.color.illustrationPalette).filter(([k]) => k !== 'note');
 const pairs = tokens.color.accessiblePairs;
 const scale = Object.entries(tokens.typography.scale);
 const spacing = Object.entries(tokens.spacing.scale);
 const radii = Object.entries(tokens.radius).filter(([k]) => k !== 'note');
+
+const referenceArt = [
+  { img: cityscape, label: 'The cityscape — Tower Bridge, Capitol, and our tree canopy' },
+  { img: marshallSchool, label: 'Marshall School — our historic anchor, always in gold' },
+  { img: communityGarden, label: 'The community garden at 26th & B' },
+  { img: homesBridge, label: 'Homes & bridge — everyday Midtown' },
+];
 
 const fontFor = (key: string) =>
   key === 'heading' ? 'var(--font-heading)' : key === 'accent' ? 'var(--font-accent)' : 'var(--font-body)';
@@ -70,7 +83,7 @@ const fontFor = (key: string) =>
     </div>
   </section>
 
-  <section class="section section-white">
+  <section class="section section-soft">
     <div class="container">
       <h2>Typography</h2>
       <p class="narrow">
@@ -125,16 +138,40 @@ const fontFor = (key: string) =>
     </div>
   </section>
 
-  <section class="section section-white">
+  <section class="section section-soft">
     <div class="container">
       <h2>Illustration style</h2>
-      <p class="narrow">{tokens.illustration.style}. {tokens.illustration.composition}.</p>
+      <p class="narrow">{tokens.illustration.style}.</p>
+      <p class="narrow">{tokens.illustration.heroSubjects}</p>
+      <div class="art-grid">
+        {referenceArt.map((a) => (
+          <figure class="art-example">
+            <div class="img-frame">
+              <Image src={a.img} alt={`Brand illustration example: ${a.label}`} width={720} />
+            </div>
+            <figcaption>{a.label}</figcaption>
+          </figure>
+        ))}
+      </div>
+      <div class="swatch-grid" style="margin-top: var(--space-lg);">
+        {illustrationColors.map(([key, c]: [string, any]) => (
+          <div class="swatch card">
+            <div class="chip" style={`background:${c.value}`}></div>
+            <strong>{c.name}</strong>
+            <code>{c.value}</code>
+            <p>{c.usage}</p>
+          </div>
+        ))}
+      </div>
       <div class="split-2">
         <div>
+          <h3>How a scene is built</h3>
+          <p>{tokens.illustration.composition}.</p>
           <h3>Motifs</h3>
           <ul>
             {tokens.illustration.motifs.map((m: string) => <li>{m}</li>)}
           </ul>
+          <p><em>{tokens.illustration.palette}.</em></p>
         </div>
         <div>
           <h3>Photography</h3>
@@ -231,5 +268,21 @@ const fontFor = (key: string) =>
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--space-xl);
     margin-top: var(--space-lg);
+  }
+  .art-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+  }
+  .art-example {
+    margin: 0;
+  }
+  .art-example .img-frame {
+    box-shadow: var(--shadow-card);
+  }
+  .art-example figcaption {
+    font-size: 0.85rem;
+    margin-top: var(--space-sm);
+    color: var(--color-link);
   }
 </style>

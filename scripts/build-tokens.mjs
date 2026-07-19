@@ -11,10 +11,12 @@ const kebab = (s) => s.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
 const lines = [];
 
 for (const [group, colors] of Object.entries(tokens.color)) {
-  if (!['primary', 'secondary', 'semantic'].includes(group)) continue;
+  if (!['primary', 'secondary', 'illustrationPalette', 'semantic'].includes(group)) continue;
   for (const [name, def] of Object.entries(colors)) {
+    if (name === 'note') continue;
     const value = def.resolved ?? def.value;
-    if (typeof value === 'string' && value.startsWith('#')) {
+    // emit hex values and CSS-value strings (e.g. gradients), skip token refs
+    if (typeof value === 'string' && !value.startsWith('{')) {
       lines.push(`  --color-${kebab(name)}: ${value};`);
     }
   }

@@ -1,5 +1,6 @@
 ---
 import { render } from 'astro:content';
+import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
@@ -21,27 +22,45 @@ const dateFmt = data.date.toLocaleDateString('en-US', {
 ---
 
 <article class="card event-card">
-  <div class="date-chip">
-    <span class="month">{data.date.toLocaleDateString('en-US', { month: 'short', timeZone: 'UTC' })}</span>
-    <span class="day">{data.date.getUTCDate()}</span>
-  </div>
-  <div>
-    <h3>{data.title}</h3>
-    <p class="event-meta">
-      {dateFmt}{data.time && ` · ${data.time}`}
-      {data.location && <><br />{data.location}</>}
-    </p>
-    {data.recurring && <p class="recurring">Repeats: {data.recurring}</p>}
-    {Content && <div class="prose"><Content /></div>}
-    {data.cta && <a class="btn btn-primary" href={data.cta.href}>{data.cta.label}</a>}
+  {data.image && (
+    <div class="img-frame event-art">
+      <Image src={data.image} alt={data.imageAlt ?? ''} width={720} />
+    </div>
+  )}
+  <div class="event-body">
+    <div class="date-chip">
+      <span class="month">{data.date.toLocaleDateString('en-US', { month: 'short', timeZone: 'UTC' })}</span>
+      <span class="day">{data.date.getUTCDate()}</span>
+    </div>
+    <div>
+      <h3>{data.title}</h3>
+      <p class="event-meta">
+        {dateFmt}{data.time && ` · ${data.time}`}
+        {data.location && <><br />{data.location}</>}
+      </p>
+      {data.recurring && <p class="recurring">Repeats: {data.recurring}</p>}
+      {Content && <div class="prose"><Content /></div>}
+      {data.cta && <a class="btn btn-primary" href={data.cta.href}>{data.cta.label}</a>}
+    </div>
   </div>
 </article>
 
 <style>
   .event-card {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .event-art {
+    border-radius: 0;
+    aspect-ratio: 21 / 9;
+  }
+  .event-body {
     display: flex;
     gap: var(--space-md);
     align-items: flex-start;
+    padding: var(--space-lg);
   }
   .event-card h3 {
     margin-bottom: var(--space-xs);
