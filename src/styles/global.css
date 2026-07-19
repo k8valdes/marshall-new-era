@@ -120,6 +120,11 @@ img {
   border-color: var(--color-deep-teal);
 }
 
+.btn-sm {
+  padding: 0.4rem 1rem;
+  font-size: 0.875rem;
+}
+
 .on-dark .btn-secondary {
   color: var(--color-cream);
   border-color: var(--color-cream);

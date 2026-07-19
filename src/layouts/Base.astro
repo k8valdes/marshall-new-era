@@ -58,8 +58,11 @@ const nav = [
       <slot />
     </main>
 
+    <div class="map-band" aria-hidden="true">
+      <img src={`${base}/illustrations/map-band.svg`} alt="" loading="lazy" />
+    </div>
     <footer class="site-footer on-dark">
-      <Wave flip color="var(--color-background)" />
+      <Wave flip color="#F7ECCC" />
       <div class="container footer-inner">
         <div>
           <img src={`${base}/brand/circle-white-full-color.svg`} alt="MNENA badge logo" width="96" height="96" />
@@ -141,9 +144,18 @@ const nav = [
     background: rgba(247, 236, 204, 0.14);
     color: var(--color-sun-gold);
   }
+  .map-band {
+    margin-top: var(--space-2xl);
+    line-height: 0;
+  }
+  .map-band img {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+  }
   .site-footer {
     background: var(--color-surface-inverse);
-    margin-top: var(--space-2xl);
   }
   .footer-inner {
     display: grid;

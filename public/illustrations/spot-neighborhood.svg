@@ -1,0 +1,152 @@
+<svg width="760" height="1000" viewBox="0 0 760 1000" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tall flat vector illustration of a Midtown block: the Tower Bridge and skyline above tree-lined Victorian homes, with neighbors and a dog on the sidewalk below">
+  <!-- sky -->
+  <rect width="760" height="1000" fill="#7AB6A4"/>
+  <g fill="#F7ECCC">
+    <ellipse cx="150" cy="80" rx="58" ry="20"/><ellipse cx="196" cy="66" rx="34" ry="14"/>
+    <path d="M560 120 a24 24 0 0 1 24 -24 a28 28 0 0 1 52 -8 a22 22 0 0 1 32 20 q0 12 -12 12 h-84 q-12 0 -12 -12 Z"/>
+  </g>
+  <!-- bridge towers, distant -->
+  <g fill="#F3CB4A">
+    <rect x="80" y="170" width="12" height="140"/>
+    <rect x="112" y="170" width="12" height="140"/>
+    <rect x="76" y="164" width="52" height="12" rx="2"/>
+    <rect x="76" y="220" width="52" height="8"/>
+    <path d="M80 230 L122 296 M122 230 L80 296" stroke="#F3CB4A" stroke-width="7"/>
+    <rect x="76" y="296" width="52" height="8"/>
+    <rect x="40" y="304" width="180" height="10" fill="#E0B93E"/>
+  </g>
+  <!-- capitol dome + skyline -->
+  <g>
+    <rect x="560" y="250" width="96" height="70" fill="#F7ECCC"/>
+    <path d="M580 250 v-30 a28 28 0 0 1 56 0 v30 Z" fill="#F7ECCC"/>
+    <circle cx="608" cy="212" r="6" fill="#F7ECCC"/>
+    <g fill="#35917E">
+      <rect x="572" y="262" width="8" height="46"/><rect x="590" y="262" width="8" height="46"/>
+      <rect x="608" y="262" width="8" height="46"/><rect x="626" y="262" width="8" height="46"/>
+    </g>
+  </g>
+  <g fill="#35917E">
+    <rect x="240" y="230" width="52" height="90"/>
+    <path d="M330 320 v-70 h44 l12 -22 12 22 v70 Z"/>
+    <rect x="440" y="212" width="46" height="108"/>
+    <rect x="680" y="240" width="50" height="80"/>
+  </g>
+  <!-- canopy band -->
+  <g fill="#368A59">
+    <ellipse cx="60" cy="340" rx="66" ry="48"/>
+    <path d="M240 388 q-58 0 -58 -44 q0 -32 32 -38 q6 -28 38 -28 q32 0 38 28 q32 6 32 38 q0 44 -58 44 Z" transform="translate(-30 0)"/>
+    <circle cx="360" cy="342" r="50"/>
+    <ellipse cx="500" cy="348" rx="58" ry="42"/>
+    <circle cx="650" cy="340" r="54"/>
+    <ellipse cx="760" cy="352" rx="52" ry="40"/>
+  </g>
+  <!-- Victorian homes row -->
+  <g>
+    <!-- home 1: cream victorian -->
+    <g transform="translate(40 380)">
+      <rect x="0" y="60" width="150" height="150" fill="#F7ECCC"/>
+      <path d="M-14 60 L164 60 L75 -18 Z" fill="#0B3A38"/>
+      <circle cx="75" cy="40" r="14" fill="#7CD1E8"/>
+      <rect x="22" y="96" width="32" height="46" rx="2" fill="#479FB3"/>
+      <rect x="96" y="96" width="32" height="46" rx="2" fill="#479FB3"/>
+      <rect x="58" y="150" width="36" height="60" fill="#EC8A1F"/>
+      <rect x="0" y="204" width="150" height="6" fill="#D9C89E"/>
+    </g>
+    <!-- home 2: teal craftsman -->
+    <g transform="translate(240 410)">
+      <rect x="0" y="46" width="160" height="134" fill="#479FB3"/>
+      <path d="M-16 46 L176 46 L80 -30 Z" fill="#0B3A38"/>
+      <rect x="20" y="76" width="34" height="44" rx="2" fill="#F7ECCC"/>
+      <rect x="106" y="76" width="34" height="44" rx="2" fill="#F7ECCC"/>
+      <rect x="62" y="120" width="36" height="60" fill="#F3CB4A"/>
+      <rect x="0" y="174" width="160" height="6" fill="#35708100"/>
+    </g>
+    <!-- home 3: gold cottage -->
+    <g transform="translate(450 430)">
+      <rect x="0" y="40" width="140" height="120" fill="#F3CB4A"/>
+      <path d="M-14 40 L154 40 L70 -26 Z" fill="#0B4A44"/>
+      <rect x="18" y="66" width="30" height="40" rx="2" fill="#004447"/>
+      <rect x="92" y="66" width="30" height="40" rx="2" fill="#004447"/>
+      <rect x="54" y="100" width="32" height="60" fill="#004447"/>
+    </g>
+    <!-- home 4: deep teal flats -->
+    <g transform="translate(630 400)">
+      <rect x="0" y="0" width="130" height="190" fill="#004447"/>
+      <rect x="0" y="0" width="130" height="10" fill="#01332F"/>
+      <g fill="#7CD1E8">
+        <rect x="18" y="28" width="28" height="36" rx="2"/><rect x="80" y="28" width="28" height="36" rx="2"/>
+        <rect x="18" y="86" width="28" height="36" rx="2"/><rect x="80" y="86" width="28" height="36" rx="2"/>
+      </g>
+      <rect x="46" y="134" width="34" height="56" fill="#F3CB4A"/>
+    </g>
+  </g>
+  <!-- lawn -->
+  <rect y="588" width="760" height="120" fill="#5DA145"/>
+  <rect y="588" width="760" height="10" fill="#4C8F3D"/>
+  <!-- street trees -->
+  <g>
+    <rect x="180" y="620" width="12" height="70" fill="#7A4A21"/>
+    <circle cx="186" cy="600" r="44" fill="#368A59"/>
+    <rect x="560" y="616" width="12" height="74" fill="#7A4A21"/>
+    <ellipse cx="566" cy="592" rx="48" ry="52" fill="#2B6E49"/>
+  </g>
+  <!-- sidewalk -->
+  <rect y="708" width="760" height="70" fill="#FBDD9F"/>
+  <g stroke="#E8C77E" stroke-width="4">
+    <line x1="100" y1="708" x2="86" y2="778"/><line x1="300" y1="708" x2="286" y2="778"/>
+    <line x1="500" y1="708" x2="486" y2="778"/><line x1="690" y1="708" x2="676" y2="778"/>
+  </g>
+  <!-- neighbors: two figures waving + dog -->
+  <g>
+    <!-- figure 1 -->
+    <g transform="translate(220 640)">
+      <circle cx="0" cy="0" r="22" fill="#0B3A38"/>
+      <path d="M-24 24 q24 -14 48 0 l6 76 h-60 Z" fill="#EC8A1F"/>
+      <path d="M22 34 q26 -8 34 -34" stroke="#EC8A1F" stroke-width="14" stroke-linecap="round" fill="none"/>
+      <rect x="-20" y="98" width="16" height="40" fill="#0B3A38"/>
+      <rect x="6" y="98" width="16" height="40" fill="#0B3A38"/>
+    </g>
+    <!-- figure 2 -->
+    <g transform="translate(330 656)">
+      <circle cx="0" cy="0" r="20" fill="#0B3A38"/>
+      <path d="M-22 22 q22 -12 44 0 l5 68 h-54 Z" fill="#479FB3"/>
+      <path d="M-20 30 q-24 -6 -30 -30" stroke="#479FB3" stroke-width="13" stroke-linecap="round" fill="none"/>
+      <rect x="-17" y="88" width="14" height="36" fill="#0B3A38"/>
+      <rect x="5" y="88" width="14" height="36" fill="#0B3A38"/>
+    </g>
+    <!-- dog -->
+    <g transform="translate(430 740)">
+      <ellipse cx="0" cy="0" rx="34" ry="18" fill="#0B3A38"/>
+      <circle cx="30" cy="-14" r="12" fill="#0B3A38"/>
+      <path d="M36 -24 l8 -12 4 12 Z" fill="#0B3A38"/>
+      <path d="M-30 -6 q-14 -8 -10 -22" stroke="#0B3A38" stroke-width="7" stroke-linecap="round" fill="none"/>
+      <rect x="-22" y="12" width="8" height="20" fill="#0B3A38"/>
+      <rect x="12" y="12" width="8" height="20" fill="#0B3A38"/>
+    </g>
+    <!-- leash -->
+    <path d="M310 686 Q 390 700 432 724" stroke="#0B3A38" stroke-width="4" fill="none"/>
+  </g>
+  <!-- garden strip bottom -->
+  <rect y="778" width="760" height="222" fill="#4C8F3D"/>
+  <g transform="translate(70 830)">
+    <rect x="0" y="0" width="280" height="64" rx="10" fill="#004447"/>
+    <rect x="12" y="-14" width="256" height="22" rx="7" fill="#01332F"/>
+    <g fill="#5DA145">
+      <path d="M48 -14 c-16 -20 -16 -34 0 -45 c16 11 16 25 0 45 Z"/>
+      <path d="M118 -14 c-16 -20 -16 -34 0 -45 c16 11 16 25 0 45 Z"/>
+      <path d="M188 -14 c-16 -20 -16 -34 0 -45 c16 11 16 25 0 45 Z"/>
+      <path d="M248 -14 c-16 -20 -16 -34 0 -45 c16 11 16 25 0 45 Z"/>
+    </g>
+  </g>
+  <g transform="translate(430 862)">
+    <rect x="0" y="0" width="260" height="58" rx="10" fill="#004447"/>
+    <rect x="12" y="-13" width="236" height="20" rx="7" fill="#01332F"/>
+    <g stroke="#368A59" stroke-width="8" stroke-linecap="round">
+      <line x1="50" y1="-13" x2="50" y2="-70"/><line x1="130" y1="-13" x2="130" y2="-80"/><line x1="210" y1="-13" x2="210" y2="-66"/>
+    </g>
+    <circle cx="50" cy="-78" r="18" fill="#5DA145"/><circle cx="130" cy="-90" r="21" fill="#5DA145"/><circle cx="210" cy="-74" r="17" fill="#5DA145"/>
+    <circle cx="40" cy="-66" r="8" fill="#EC8A1F"/><circle cx="140" cy="-78" r="9" fill="#EC8A1F"/><circle cx="218" cy="-62" r="7" fill="#EC8A1F"/>
+  </g>
+  <!-- sand path across the garden -->
+  <path d="M0 960 C 200 936 420 976 760 944 L760 1000 L0 1000 Z" fill="#FBDD9F"/>
+</svg>

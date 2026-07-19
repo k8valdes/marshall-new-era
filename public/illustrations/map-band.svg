@@ -1,0 +1,55 @@
+<svg width="2400" height="230" viewBox="0 0 2400 230" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stylized map of Midtown Sacramento: colorful blocks representing the neighborhood, with a path leading to a star marker">
+  <!-- sand map background -->
+  <rect width="2400" height="230" fill="#F7ECCC"/>
+  <!-- subtle street grid, slightly hand-drawn -->
+  <g stroke="#F0DDAC" stroke-width="4" fill="none">
+    <path d="M120 0 C 126 80 118 160 124 230"/>
+    <path d="M320 0 C 314 76 322 150 316 230"/>
+    <path d="M520 0 C 526 84 518 164 524 230"/>
+    <path d="M720 0 C 714 70 722 156 716 230"/>
+    <path d="M920 0 C 926 88 918 168 924 230"/>
+    <path d="M1120 0 C 1114 74 1122 152 1116 230"/>
+    <path d="M1320 0 C 1326 82 1318 162 1324 230"/>
+    <path d="M1520 0 C 1514 72 1522 150 1516 230"/>
+    <path d="M1720 0 C 1726 86 1718 166 1724 230"/>
+    <path d="M1920 0 C 1914 76 1922 154 1916 230"/>
+    <path d="M2120 0 C 2126 80 2118 160 2124 230"/>
+    <path d="M2320 0 C 2314 74 2322 152 2316 230"/>
+    <path d="M0 58 C 400 52 800 64 1200 58 C 1600 52 2000 64 2400 58"/>
+    <path d="M0 120 C 420 126 820 114 1220 120 C 1620 126 2020 114 2400 120"/>
+    <path d="M0 182 C 380 176 780 188 1180 182 C 1580 176 1980 188 2400 182"/>
+  </g>
+  <!-- river hint, top-left -->
+  <path d="M-20 -30 C 120 30 320 4 460 -30 L460 -60 L-20 -60 Z" fill="#479FB3" opacity="0.35"/>
+  <!-- chicklet city blocks: upper cluster -->
+  <g transform="translate(760 30) rotate(-2)">
+    <rect x="0" y="0" width="72" height="42" rx="6" fill="#5DA145"/>
+    <rect x="80" y="0" width="72" height="42" rx="6" fill="#479FB3"/>
+    <rect x="160" y="0" width="72" height="42" rx="6" fill="#F3CB4A"/>
+    <rect x="240" y="0" width="72" height="42" rx="6" fill="#004447"/>
+    <rect x="320" y="0" width="72" height="42" rx="6" fill="#7CD1E8"/>
+    <rect x="0" y="50" width="72" height="42" rx="6" fill="#EC8A1F"/>
+    <rect x="80" y="50" width="72" height="42" rx="6" fill="#FBDD9F"/>
+    <rect x="160" y="50" width="72" height="42" rx="6" fill="#368A59"/>
+    <rect x="240" y="50" width="72" height="42" rx="6" fill="#7CD1E8"/>
+    <rect x="320" y="50" width="72" height="42" rx="6" fill="#5DA145"/>
+  </g>
+  <!-- chicklet city blocks: lower cluster, offset right (L-shape like the sign) -->
+  <g transform="translate(1080 118) rotate(-2)">
+    <rect x="0" y="0" width="72" height="42" rx="6" fill="#004447"/>
+    <rect x="80" y="0" width="72" height="42" rx="6" fill="#F3CB4A"/>
+    <rect x="160" y="0" width="72" height="42" rx="6" fill="#5DA145"/>
+    <rect x="240" y="0" width="72" height="42" rx="6" fill="#EC8A1F"/>
+    <rect x="0" y="50" width="72" height="42" rx="6" fill="#479FB3"/>
+    <rect x="80" y="50" width="72" height="42" rx="6" fill="#368A59"/>
+    <rect x="160" y="50" width="72" height="42" rx="6" fill="#FBDD9F"/>
+    <rect x="240" y="50" width="72" height="42" rx="6" fill="#7CD1E8"/>
+  </g>
+  <!-- dotted route to the star -->
+  <path d="M600 210 C 900 190 1300 150 1660 96" stroke="#FFFFFF" stroke-width="7" stroke-dasharray="2 22" stroke-linecap="round" fill="none"/>
+  <!-- star marker -->
+  <g transform="translate(1700 78)">
+    <circle cx="0" cy="0" r="42" fill="#FFFFFF"/>
+    <path d="M0 -24 l7.4 15 16.6 2.4 -12 11.7 2.8 16.5 -14.8 -7.8 -14.8 7.8 2.8 -16.5 -12 -11.7 16.6 -2.4 Z" fill="#EC8A1F"/>
+  </g>
+</svg>

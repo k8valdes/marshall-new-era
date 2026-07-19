@@ -6,8 +6,6 @@ import Wave from '../components/Wave.astro';
 import EventCard from '../components/EventCard.astro';
 import NewsThumb from '../components/NewsThumb.astro';
 import GridMotif from '../components/GridMotif.astro';
-import homesBridge from '../assets/illustrations/homes-bridge.png';
-import cityscapeArt from '../assets/illustrations/cityscape.png';
 import marshallSchool from '../assets/illustrations/marshall-school.png';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -63,33 +61,33 @@ const schoolTimeline = [
 
 <Base title="Home">
   <section class="hero">
-    <Image
+    <img
       class="hero-bg"
-      src={homesBridge}
+      src={`${base}/illustrations/hero-banner.svg`}
       alt=""
-      width={1920}
       loading="eager"
     />
     <div class="container hero-layout">
       <div class="welcome-card">
-        <img
-          class="welcome-badge"
-          src={`${base}/brand/circle-white-full-color.svg`}
-          alt=""
-          width="112"
-          height="112"
-        />
-        <p class="accent-script">Welcome to</p>
-        <h1>Marshall School &amp; New&nbsp;Era&nbsp;Park</h1>
+        <div class="welcome-head">
+          <img
+            class="welcome-badge"
+            src={`${base}/brand/circle-white-full-color.svg`}
+            alt=""
+            width="132"
+            height="132"
+          />
+          <div>
+            <p class="accent-script">Welcome to</p>
+            <h1>Marshall School &amp; New&nbsp;Era&nbsp;Park</h1>
+          </div>
+        </div>
         <p>
           We're glad you're here! MNENA is a volunteer-led neighborhood
           association serving the Marshall School and New Era Park
-          neighborhoods in midtown Sacramento.
-        </p>
-        <p>
-          Whether you're new or a longtime resident, MNENA connects neighbors,
-          uplifts local voices, and supports the people and places that make
-          this area special.
+          neighborhoods in midtown Sacramento. Whether you're new or a
+          longtime resident, MNENA connects neighbors, uplifts local voices,
+          and supports the people and places that make this area special.
         </p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href={`${base}/join/`}>Become a member — $20/yr</a>
@@ -117,7 +115,7 @@ const schoolTimeline = [
             <div class="involved-body">
               <h3>{item.title}</h3>
               <p>{item.text}</p>
-              <a class="btn btn-secondary" href={item.href}>{item.cta}</a>
+              <a class="btn btn-secondary btn-sm" href={item.href}>{item.cta}</a>
             </div>
           </article>
         ))}
@@ -128,10 +126,12 @@ const schoolTimeline = [
   <section class="section section-soft">
     <div class="container matters">
       <div class="img-frame matters-art">
-        <Image
-          src={cityscapeArt}
-          alt="Flat vector illustration of Midtown Sacramento — the gold Tower Bridge and Capitol among layered green trees and homes"
-          width={880}
+        <img
+          src={`${base}/illustrations/spot-neighborhood.svg`}
+          alt="Tall flat vector illustration of a Midtown block: the Tower Bridge and skyline above tree-lined Victorian homes, with neighbors and a dog on the sidewalk"
+          width="760"
+          height="1000"
+          loading="lazy"
         />
       </div>
       <div>
@@ -249,7 +249,7 @@ const schoolTimeline = [
   .hero {
     position: relative;
     overflow: hidden;
-    min-height: 420px;
+    min-height: 360px;
     display: flex;
     align-items: center;
   }
@@ -259,14 +259,14 @@ const schoolTimeline = [
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 72%;
+    object-position: right center;
   }
   .hero-layout {
     position: relative;
     width: 100%;
     display: flex;
     justify-content: flex-start;
-    padding-block: var(--space-xl);
+    padding-block: var(--space-lg);
   }
   .welcome-card {
     background: rgba(255, 255, 255, 0.93);
@@ -274,23 +274,24 @@ const schoolTimeline = [
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-raised);
     padding: var(--space-lg) var(--space-xl);
-    padding-top: 56px;
-    max-width: 27rem;
-    position: relative;
-    margin-top: 40px;
-    text-align: center;
+    max-width: 42rem;
+  }
+  .welcome-head {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    text-align: left;
+    margin-bottom: var(--space-sm);
   }
   .welcome-badge {
-    position: absolute;
-    top: -44px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 88px;
-    height: 88px;
-    filter: drop-shadow(0 4px 12px rgba(0, 68, 71, 0.3));
+    flex-shrink: 0;
+    width: 132px;
+    height: 132px;
+    filter: drop-shadow(0 4px 12px rgba(0, 68, 71, 0.25));
   }
   .welcome-card h1 {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
+    margin: 0;
   }
   .welcome-card p {
     font-size: 0.95rem;
@@ -298,27 +299,32 @@ const schoolTimeline = [
   }
   .welcome-card .accent-script {
     margin-bottom: 0;
-    font-size: 1.8rem;
+    font-size: 1.9rem;
   }
   .hero-ctas {
     display: flex;
     gap: var(--space-md);
     flex-wrap: wrap;
-    justify-content: center;
     margin-top: var(--space-sm);
   }
   @media (max-width: 800px) {
     .hero { min-height: 0; }
     .hero-layout { justify-content: center; }
-    .welcome-card { margin-top: 150px; }
+    .welcome-card { margin-top: 120px; }
+    .welcome-head { flex-direction: column; text-align: center; gap: var(--space-sm); }
+    .welcome-badge { width: 96px; height: 96px; }
+    .hero-ctas { justify-content: center; }
   }
 
   /* ---------- why it matters ---------- */
   .matters {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--space-xl);
-    align-items: center;
+    grid-template-columns: minmax(280px, 420px) 1fr;
+    gap: var(--space-2xl);
+    align-items: stretch;
+  }
+  @media (max-width: 760px) {
+    .matters { grid-template-columns: 1fr; }
   }
   .matters ul {
     padding-left: 1.2rem;
@@ -328,6 +334,11 @@ const schoolTimeline = [
   }
   .matters-art {
     box-shadow: var(--shadow-card);
+  }
+  .matters-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   /* ---------- get involved ---------- */
