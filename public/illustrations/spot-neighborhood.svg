@@ -1,10 +1,6 @@
 <svg width="760" height="1000" viewBox="0 0 760 1000" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tall flat vector illustration of a Midtown block: the Tower Bridge and skyline above tree-lined Victorian homes, with neighbors and a dog on the sidewalk below">
   <!-- sky -->
-  <rect width="760" height="1000" fill="#7AB6A4"/>
-  <g fill="#F7ECCC">
-    <ellipse cx="150" cy="80" rx="58" ry="20"/><ellipse cx="196" cy="66" rx="34" ry="14"/>
-    <path d="M560 120 a24 24 0 0 1 24 -24 a28 28 0 0 1 52 -8 a22 22 0 0 1 32 20 q0 12 -12 12 h-84 q-12 0 -12 -12 Z"/>
-  </g>
+  <rect width="760" height="1000" fill="#FBF8ED"/>
   <!-- bridge towers, distant -->
   <g fill="#F3CB4A">
     <rect x="80" y="170" width="12" height="140"/>
@@ -15,24 +11,20 @@
     <rect x="76" y="296" width="52" height="8"/>
     <rect x="40" y="304" width="180" height="10" fill="#E0B93E"/>
   </g>
-  <!-- capitol dome + skyline -->
-  <g>
-    <rect x="560" y="250" width="96" height="70" fill="#F7ECCC"/>
-    <path d="M580 250 v-30 a28 28 0 0 1 56 0 v30 Z" fill="#F7ECCC"/>
-    <circle cx="608" cy="212" r="6" fill="#F7ECCC"/>
-    <g fill="#35917E">
-      <rect x="572" y="262" width="8" height="46"/><rect x="590" y="262" width="8" height="46"/>
-      <rect x="608" y="262" width="8" height="46"/><rect x="626" y="262" width="8" height="46"/>
-    </g>
+  <!-- capitol dome, silhouette like the hero art -->
+  <g fill="#4E9B91">
+    <rect x="560" y="250" width="96" height="70"/>
+    <path d="M580 250 v-30 a28 28 0 0 1 56 0 v30 Z"/>
+    <circle cx="608" cy="212" r="6"/>
   </g>
-  <g fill="#35917E">
+  <g fill="#4E9B91">
     <rect x="240" y="230" width="52" height="90"/>
     <path d="M330 320 v-70 h44 l12 -22 12 22 v70 Z"/>
     <rect x="440" y="212" width="46" height="108"/>
     <rect x="680" y="240" width="50" height="80"/>
   </g>
   <!-- canopy band -->
-  <g fill="#368A59">
+  <g fill="#0A5750">
     <ellipse cx="60" cy="340" rx="66" ry="48"/>
     <path d="M240 388 q-58 0 -58 -44 q0 -32 32 -38 q6 -28 38 -28 q32 0 38 28 q32 6 32 38 q0 44 -58 44 Z" transform="translate(-30 0)"/>
     <circle cx="360" cy="342" r="50"/>
@@ -81,14 +73,14 @@
     </g>
   </g>
   <!-- lawn -->
-  <rect y="588" width="760" height="120" fill="#5DA145"/>
-  <rect y="588" width="760" height="10" fill="#4C8F3D"/>
+  <rect y="588" width="760" height="120" fill="#3E7A4A"/>
+  <rect y="588" width="760" height="10" fill="#2E5D45"/>
   <!-- street trees -->
   <g>
     <rect x="180" y="620" width="12" height="70" fill="#7A4A21"/>
-    <circle cx="186" cy="600" r="44" fill="#368A59"/>
+    <circle cx="186" cy="600" r="44" fill="#0A5750"/>
     <rect x="560" y="616" width="12" height="74" fill="#7A4A21"/>
-    <ellipse cx="566" cy="592" rx="48" ry="52" fill="#2B6E49"/>
+    <ellipse cx="566" cy="592" rx="48" ry="52" fill="#014543"/>
   </g>
   <!-- sidewalk -->
   <rect y="708" width="760" height="70" fill="#FBDD9F"/>
@@ -127,7 +119,7 @@
     <path d="M310 686 Q 390 700 432 724" stroke="#0B3A38" stroke-width="4" fill="none"/>
   </g>
   <!-- garden strip bottom -->
-  <rect y="778" width="760" height="222" fill="#4C8F3D"/>
+  <rect y="778" width="760" height="222" fill="#2E5D45"/>
   <g transform="translate(70 830)">
     <rect x="0" y="0" width="280" height="64" rx="10" fill="#004447"/>
     <rect x="12" y="-14" width="256" height="22" rx="7" fill="#01332F"/>
@@ -141,7 +133,7 @@
   <g transform="translate(430 862)">
     <rect x="0" y="0" width="260" height="58" rx="10" fill="#004447"/>
     <rect x="12" y="-13" width="236" height="20" rx="7" fill="#01332F"/>
-    <g stroke="#368A59" stroke-width="8" stroke-linecap="round">
+    <g stroke="#0A5750" stroke-width="8" stroke-linecap="round">
       <line x1="50" y1="-13" x2="50" y2="-70"/><line x1="130" y1="-13" x2="130" y2="-80"/><line x1="210" y1="-13" x2="210" y2="-66"/>
     </g>
     <circle cx="50" cy="-78" r="18" fill="#5DA145"/><circle cx="130" cy="-90" r="21" fill="#5DA145"/><circle cx="210" cy="-74" r="17" fill="#5DA145"/>

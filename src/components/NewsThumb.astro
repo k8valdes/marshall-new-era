@@ -24,10 +24,10 @@ const rand = (() => {
   };
 })();
 
-// palette rotation: three sky moods (brand variation rule)
+// palette rotation: three sky moods matched to the final hero artwork
 const moods = [
-  { sky: '#7AB6A4', far: '#35917E', ground: '#5DA145', groundEdge: '#4C8F3D' },
-  { sky: '#9CC8BA', far: '#479FB3', ground: '#5DA145', groundEdge: '#4C8F3D' },
+  { sky: '#FBF8ED', far: '#4E9B91', ground: '#0A5750', groundEdge: '#014543' },
+  { sky: '#FBF8ED', far: '#5FA89A', ground: '#3E7A4A', groundEdge: '#2E5D45' },
   { sky: '#004447', far: '#0B5A56', ground: '#0B4A44', groundEdge: '#01332F' },
 ];
 const mood = moods[Math.floor(rand() * moods.length)];
@@ -56,10 +56,11 @@ const deep = dark ? '#F7ECCC' : '#004447';
 <div class:list={['img-frame', 'news-art', className]}>
   <svg viewBox="0 0 760 475" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="" preserveAspectRatio="xMidYMid slice">
     <rect width="760" height="475" fill={mood.sky} />
-    <g fill="#F7ECCC" opacity={dark ? 0.25 : 1}>
-      <ellipse cx={120 + rand() * 80} cy={60 + rand() * 30} rx="52" ry="18" />
-      <path d={`M${480 + rand() * 120} 96 a22 22 0 0 1 22 -22 a26 26 0 0 1 48 -7 a20 20 0 0 1 30 19 q0 10 -10 10 h-80 q-10 0 -10 -10 Z`} />
-    </g>
+    {dark && (
+      <g fill="#F7ECCC" opacity="0.25">
+        <ellipse cx={120 + rand() * 80} cy={60 + rand() * 30} rx="52" ry="18" />
+      </g>
+    )}
     <g fill={mood.far}>
       {buildings.map((b) =>
         b.pediment ? (
@@ -98,7 +99,7 @@ const deep = dark ? '#F7ECCC' : '#004447';
     {motif === 'tree' && (
       <g transform="translate(330 160)">
         <rect x="42" y="120" width="16" height="80" fill="#7A4A21" />
-        <path d="M50 150 q-70 0 -70 -56 q0 -40 40 -48 q8 -36 48 -36 q40 0 48 36 q40 8 40 48 q0 56 -70 56 Z" fill={dark ? '#5DA145' : '#368A59'} />
+        <path d="M50 150 q-70 0 -70 -56 q0 -40 40 -48 q8 -36 48 -36 q40 0 48 36 q40 8 40 48 q0 56 -70 56 Z" fill={dark ? '#5DA145' : '#0A5750'} />
         <circle cx="20" cy="60" r="10" fill={gold} />
         <circle cx="84" cy="44" r="8" fill="#EC8A1F" />
       </g>

@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import PageBanner from '../components/PageBanner.astro';
 import tokens from '../../brand/tokens.json';
+import heroNeighborhood from '../assets/illustrations/hero-neighborhood.png';
 import cityscape from '../assets/illustrations/cityscape.png';
 import marshallSchool from '../assets/illustrations/marshall-school.png';
 import communityGarden from '../assets/illustrations/community-garden.png';
@@ -18,7 +19,7 @@ const spacing = Object.entries(tokens.spacing.scale);
 const radii = Object.entries(tokens.radius).filter(([k]) => k !== 'note');
 
 const referenceArt = [
-  { img: cityscape, label: 'The cityscape — Tower Bridge, Capitol, and our tree canopy' },
+  { img: heroNeighborhood, label: 'The hero artwork — canonical style reference: paper-cream sky, layered canopy, gold landmarks' },
   { img: marshallSchool, label: 'Marshall School — our historic anchor, always in gold' },
   { img: communityGarden, label: 'The community garden at 26th & B' },
   { img: homesBridge, label: 'Homes & bridge — everyday Midtown' },

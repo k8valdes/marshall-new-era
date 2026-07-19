@@ -47,15 +47,17 @@ Hashtags (3–5, at the end): `#NewEraNeighbors #SacramentoLiving #MidtownPride 
 | Cream | `#F7ECCC` | **Accent only**: clouds, building highlights, text on teal — not a background |
 | Sand | `#FBDD9F` | Paths and roads in illustrations |
 
-Illustration-specific colors (from our final brand artwork):
+Illustration-specific colors (from the final hero artwork):
 
 | Color | Hex | Role |
 |---|---|---|
-| Seafoam Sky | `#7AB6A4` | The illustration sky — muted seafoam teal |
-| Deep Forest | `#014D43` | Darkest tree/skyline silhouettes |
-| Mid Green | `#368A59` | Mid-layer canopies and lawns |
+| Paper Cream | `#FBF8ED` | The illustration sky — warm off-white, **no clouds** |
+| Skyline Teal | `#4E9B91` | Downtown silhouette (Capitol dome as solid silhouette) |
+| Canopy Teal | `#0A5750` | Layered tree-canopy blobs |
+| Canopy Ink | `#014543` | Darkest foreground bushes and trunks |
+| Olive Grove | `#74831E` | Small accent trees with visible trunks |
 
-Text must be readable: deep teal on white, or cream/gold on deep teal. Never white text on green, gold, or orange. **Cream is deprioritized** — it's a warm accent (clouds, chips, script moments), not the base of a composition.
+Text must be readable: deep teal on white, or cream/gold on deep teal. Never white text on green, gold, or orange.
 
 ## Logo on graphics
 
@@ -76,11 +78,11 @@ Official vectors live in `brand/assets/logo-svg/` (and the Figma "Final Logo Pac
 
 Our look is **flat vector illustration**: layered silhouettes, no outlines, no gradients, no 3D, no photorealism. A modern take on the mid-century travel poster, looking at the Midtown Sacramento cityscape. Our two hero subjects are the **gold Tower Bridge** and the **historic Marshall School** (gold, American Classical Revival, arched fanlight window) — they anchor our corner of Midtown, with the Capitol dome in the background skyline.
 
-**Reference artwork** lives in the repo at `src/assets/illustrations/` (cityscape, marshall-school, community-garden, homes-bridge) and on the public brand page — attach one to your AI request as a style reference whenever possible; it beats any text description.
+**Reference artwork:** the canonical style reference is `src/assets/illustrations/hero-neighborhood.png` (the site's hero) — attach it to your AI request as a style reference whenever possible; it beats any text description. Additional artworks live alongside it and on the public brand page.
 
 **Base image prompt — start from this and adapt:**
 
-> Flat vector illustration, mid-century travel-poster style, no outlines, no gradients. Midtown Sacramento neighborhood scene: [SUBJECT]. Layered composition back to front: muted seafoam-teal sky (#7AB6A4) with cream clouds (#F7ECCC), deep teal downtown skyline silhouette (#004447 / #014D43), layered tree canopies in greens (#5DA145, #368A59, darker teals), Victorian and craftsman homes in cream/gold/teal, gold path or road in foreground (#F3CB4A / #FBDD9F). Palette strictly limited to: #004447, #014D43, #368A59, #5DA145, #479FB3, #7AB6A4, #F7ECCC, #F3CB4A, #EC8A1F, #7CD1E8, #FBDD9F. Greens dominate; the sky is seafoam teal, never cream; gold reserved for landmarks and paths.
+> Flat vector illustration, mid-century travel-poster style, no outlines, no gradients, no clouds. Midtown Sacramento neighborhood scene: [SUBJECT]. Layered composition back to front: warm paper-cream sky (#FBF8ED), muted teal downtown skyline silhouette (#4E9B91) with the California Capitol dome as a solid silhouette, layered deep teal-green tree-canopy blobs (#0A5750), Victorian and craftsman homes in cream/gold/teal, small olive-green accent trees with visible trunks (#74831E), darkest foreground bushes (#014543), gold Tower Bridge or Marshall School as the landmark (#F3CB4A). Palette strictly limited to: #FBF8ED, #4E9B91, #0A5750, #014543, #74831E, #004447, #F3CB4A, #EC8A1F, #479FB3, #7CD1E8, #FBDD9F, #F7ECCC. Deep teal-greens dominate against the cream sky; gold reserved for landmarks and paths.
 
 **Recognizable motifs** (pick 1–2 per image, don't stack them all):
 Tower Bridge in gold · Marshall School with its fanlight arch window · Capitol dome in cream · community garden rows · river waves · tree-lined streets with Victorians · cream clouds
