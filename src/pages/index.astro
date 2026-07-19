@@ -5,7 +5,6 @@ import Base from '../layouts/Base.astro';
 import Wave from '../components/Wave.astro';
 import EventCard from '../components/EventCard.astro';
 import NewsThumb from '../components/NewsThumb.astro';
-import GridMotif from '../components/GridMotif.astro';
 import marshallSchool from '../assets/illustrations/marshall-school.png';
 import heroNeighborhood from '../assets/illustrations/hero-neighborhood.png';
 
@@ -100,7 +99,6 @@ const schoolTimeline = [
 
   <section class="section" id="get-involved">
     <div class="container" style="text-align:center;">
-      <GridMotif seed={3} columns={9} rows={1} size={12} class="motif-center" />
       <h2>Who we are &amp; how to get involved</h2>
       <p class="narrow" style="margin-inline:auto;">
         MNENA exists to protect what we love about this community while shaping
@@ -112,7 +110,7 @@ const schoolTimeline = [
         {getInvolved.map((item) => (
           <article class="card involved-card">
             <div class="img-frame involved-art">
-              <img src={item.art} alt={item.alt} width="800" height="600" loading="lazy" />
+              <div class="ph" role="img" aria-label={`Placeholder — illustration for "${item.title}" coming soon`}></div>
             </div>
             <div class="involved-body">
               <h3>{item.title}</h3>
@@ -128,13 +126,7 @@ const schoolTimeline = [
   <section class="section section-soft">
     <div class="container matters">
       <div class="img-frame matters-art">
-        <img
-          src={`${base}/illustrations/spot-neighborhood.svg`}
-          alt="Tall flat vector illustration of a Midtown block: the Tower Bridge and skyline above tree-lined Victorian homes, with neighbors and a dog on the sidewalk"
-          width="760"
-          height="1000"
-          loading="lazy"
-        />
+        <div class="ph" role="img" aria-label="Placeholder — neighborhood illustration coming soon"></div>
       </div>
       <div>
         <p class="section-label">Why your contribution matters</p>
@@ -159,7 +151,6 @@ const schoolTimeline = [
 
   <section class="survey-band">
     <div class="container survey-band-inner">
-      <GridMotif seed={11} columns={5} rows={3} size={14} />
       <p class="survey-band-text">Take the survey and tell us what your neighborhood needs</p>
       <a class="btn btn-primary" href={surveyHref}>Take the 5-min survey</a>
     </div>
@@ -226,7 +217,6 @@ const schoolTimeline = [
           </li>
         ))}
       </ol>
-      <GridMotif seed={19} columns={26} rows={1} size={11} class="motif-center" />
     </div>
   </section>
 
@@ -251,7 +241,7 @@ const schoolTimeline = [
   .hero {
     position: relative;
     overflow: hidden;
-    min-height: 360px;
+    min-height: 540px;
     display: flex;
     align-items: center;
   }
@@ -261,7 +251,7 @@ const schoolTimeline = [
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: left 30%;
+    object-position: left center;
   }
   .hero-layout {
     position: relative;
@@ -336,6 +326,7 @@ const schoolTimeline = [
   }
   .matters-art {
     box-shadow: var(--shadow-card);
+    aspect-ratio: 3 / 4;
   }
   .matters-art img {
     width: 100%;
