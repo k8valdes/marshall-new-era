@@ -40,6 +40,6 @@ Past events automatically drop off the "Coming up" list — no need to delete th
 
 ## House rules
 
-- Follow the [brand guide](https://kvaldes44.github.io/marshall-new-era/brand/) for anything visual
+- Follow the [brand guide](https://k8valdes.github.io/marshall-new-era/brand/) for anything visual
 - Event graphics and social posts: see `brand/SOCIAL-CONTEXT.md`
 - Stuck? Something looks broken? Email Kate, or open an "Issue" on the GitHub repo

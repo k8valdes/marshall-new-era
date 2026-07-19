@@ -1,6 +1,6 @@
 # Cutover Checklist — marshallnewera.org → new site
 
-The new site runs at `https://kvaldes44.github.io/marshall-new-era/` until the board is ready. Nothing below has been done yet; the WordPress site is untouched.
+The new site runs at `https://k8valdes.github.io/marshall-new-era/` until the board is ready. Nothing below has been done yet; the WordPress site is untouched.
 
 ## Before cutover
 

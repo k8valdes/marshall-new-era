@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import TurndownService from 'turndown';
 
-const ROOT = '/Users/kvaldes44/Documents/OO_Code_Projects/marshall-new-era';
+const ROOT = new URL('..', import.meta.url).pathname;
 const posts = JSON.parse(fs.readFileSync(path.join(ROOT, 'archive/wordpress-2026-07/posts-full.json'), 'utf8'));
 const outDir = path.join(ROOT, 'src/content/news');
 const imgDir = path.join(outDir, 'images');

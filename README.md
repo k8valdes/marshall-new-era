@@ -23,6 +23,6 @@ npm run dev        # local dev server
 npm run build      # regenerates tokens.css from tokens.json, then builds
 ```
 
-**Changing brand values?** Edit `brand/tokens.json` only — `src/styles/tokens.css` and the public [/brand](https://kvaldes44.github.io/marshall-new-era/brand/) style-guide page are generated from it.
+**Changing brand values?** Edit `brand/tokens.json` only — `src/styles/tokens.css` and the public [/brand](https://k8valdes.github.io/marshall-new-era/brand/) style-guide page are generated from it.
 
 Pushing to `main` auto-deploys via GitHub Actions → GitHub Pages.
