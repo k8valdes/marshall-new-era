@@ -108,19 +108,23 @@ const fontFor = (key: string) =>
   <section class="section">
     <div class="container">
       <h2>Logo</h2>
+      <p class="narrow">{tokens.logo.principle} Vectors live in the
+        <a href="https://github.com/k8valdes/marshall-new-era/tree/main/brand/assets/logo-svg">repo</a> and the
+        <a href="https://www.figma.com/design/2kSYj7WaY7rBHvWwe4Okcy/Marshall-New-Era?node-id=172-56">Figma package</a>.
+      </p>
       <div class="logo-grid">
-        <div class="card" style="text-align:center;">
-          <img src={`${base}/brand/logo-badge.png`} alt="MNENA badge logo" width="140" />
-          <p><strong>Badge</strong> — the primary mark</p>
-        </div>
-        <div class="card" style="text-align:center;">
-          <img src={`${base}/brand/logo-circle-gold.png`} alt="MNENA badge in gold circle" width="140" />
-          <p><strong>Gold circle</strong> — avatars &amp; favicons</p>
-        </div>
-        <div class="card" style="text-align:center;">
-          <img src={`${base}/brand/logo-horizontal.png`} alt="MNENA horizontal lockup with wordmark" width="260" />
-          <p><strong>Horizontal lockup</strong> — site header, documents, banners</p>
-        </div>
+        {tokens.logo.variants.map((v: any) => (
+          <figure class={`logo-tile surface-${v.surface}`}>
+            <div class="logo-tile-art">
+              <img src={`${base}/brand/${v.file}`} alt={v.name} loading="lazy" />
+            </div>
+            <figcaption>
+              <strong>{v.name}</strong>
+              <span>{v.use}</span>
+              <code>{v.file}</code>
+            </figcaption>
+          </figure>
+        ))}
       </div>
       <div class="split-2">
         <div>
@@ -209,12 +213,51 @@ const fontFor = (key: string) =>
 </Base>
 
 <style>
-  .swatch-grid,
-  .logo-grid {
+  .swatch-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     gap: var(--space-md);
     margin-bottom: var(--space-xl);
+  }
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+  .logo-tile {
+    margin: 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    background: var(--color-surface);
+    display: flex;
+    flex-direction: column;
+  }
+  .logo-tile-art {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-lg);
+    min-height: 150px;
+  }
+  .logo-tile-art img {
+    max-height: 120px;
+    max-width: 100%;
+  }
+  .surface-white .logo-tile-art { background: var(--color-white); border-bottom: 1px solid #e4e4e4; }
+  .surface-teal .logo-tile-art { background: var(--color-deep-teal); }
+  .surface-any .logo-tile-art { background: var(--color-background-soft); }
+  .surface-self .logo-tile-art { background: var(--color-background-soft); padding: var(--space-md); }
+  .logo-tile figcaption {
+    padding: var(--space-md);
+    font-size: 0.85rem;
+    display: grid;
+    gap: 2px;
+  }
+  .logo-tile figcaption code {
+    color: var(--color-link);
+    font-size: 0.75rem;
   }
   .swatch .chip {
     height: 72px;

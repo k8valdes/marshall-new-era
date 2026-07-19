@@ -57,6 +57,15 @@ Illustration-specific colors (from our final brand artwork):
 
 Text must be readable: deep teal on white, or cream/gold on deep teal. Never white text on green, gold, or orange. **Cream is deprioritized** — it's a warm accent (clouds, chips, script moments), not the base of a composition.
 
+## Logo on graphics
+
+Official vectors live in `brand/assets/logo-svg/` (and the Figma "Final Logo Package"). Pair the version with its surface — never recolor or rebuild the mark:
+
+- On **teal/dark** graphics: `badge-knockout-color.svg` (or `badge-mono-white.svg` for low-key)
+- On **white/light** graphics: `badge-full-color.svg` (or `badge-mono-teal.svg`)
+- **Avatar / round contexts** (profile pics, story stickers): `circle-white-full-color.svg`
+- The old gold-circle logo is **retired** — don't use it in new posts
+
 ## Fonts (for graphics with text)
 
 - Titles: **Source Serif 4 / Source Serif Pro** (bold serif)
