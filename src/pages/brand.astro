@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
+import PageBanner from '../components/PageBanner.astro';
 import tokens from '../../brand/tokens.json';
 import cityscape from '../assets/illustrations/cityscape.png';
 import marshallSchool from '../assets/illustrations/marshall-school.png';
@@ -28,10 +29,9 @@ const fontFor = (key: string) =>
 ---
 
 <Base title="Brand Guide" description="The MNENA brand — colors, typography, logo rules, and voice. Token-based and public, so everything we make looks like us.">
+  <PageBanner title="MNENA Brand Guide" accent="Look the part" image={homesBridge} position="center 20%" />
   <section class="section">
     <div class="container">
-      <p class="accent-script">Look the part</p>
-      <h1>MNENA Brand Guide</h1>
       <p class="narrow">
         Everything here is generated from a single <a href="https://github.com/k8valdes/marshall-new-era/blob/main/brand/tokens.json">tokens file</a> —
         the same values that style this website. Making a flyer, a post, or a

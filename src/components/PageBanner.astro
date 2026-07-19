@@ -1,0 +1,67 @@
+---
+// Reduced-height page banner: content-specific brand illustration behind the
+// page title, unified by a deep-teal legibility gradient.
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  title: string;
+  accent?: string; // short Dancing Script phrase above the title
+  image?: ImageMetadata | string; // astro asset, or public path string (svg)
+  position?: string; // object-position for the art
+}
+
+const { title, accent, image, position = 'center 60%' } = Astro.props;
+---
+
+<section class="page-banner">
+  {image && (typeof image === 'string' ? (
+    <img class="banner-art" src={image} alt="" style={`object-position:${position};`} loading="eager" />
+  ) : (
+    <Image class="banner-art" src={image} alt="" width={1920} style={`object-position:${position};`} loading="eager" />
+  ))}
+  <div class="banner-scrim" aria-hidden="true"></div>
+  <div class="container banner-content">
+    {accent && <p class="accent-script banner-accent">{accent}</p>}
+    <h1>{title}</h1>
+  </div>
+</section>
+
+<style>
+  .page-banner {
+    position: relative;
+    background: var(--color-surface-inverse);
+    min-height: 200px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+  .banner-art {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .banner-scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0, 68, 71, 0.82) 0%, rgba(0, 68, 71, 0.45) 45%, rgba(0, 68, 71, 0.05) 75%);
+  }
+  .banner-content {
+    position: relative;
+    width: 100%;
+    padding-block: var(--space-lg);
+  }
+  .banner-accent {
+    color: var(--color-sun-gold);
+    font-size: 1.7rem;
+    margin: 0;
+  }
+  .banner-content h1 {
+    color: var(--color-white);
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    margin: 0;
+    text-shadow: 0 2px 12px rgba(0, 68, 71, 0.4);
+  }
+</style>

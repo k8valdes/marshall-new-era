@@ -1,12 +1,14 @@
 ---
 import Base from '../layouts/Base.astro';
+import PageBanner from '../components/PageBanner.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <Base title="Contact" description="Get in touch with the Marshall–New Era Neighborhood Association.">
+  <PageBanner title="Contact us" accent="Say hello" image={`${base}/illustrations/spot-meeting.svg`} position="center 35%" />
   <section class="section">
     <div class="container narrow">
-      <p class="accent-script">Say hello</p>
-      <h1>Contact us</h1>
       <div class="card">
         <p>
           📧 <a href="mailto:info@marshallnewera.org">info@marshallnewera.org</a><br />

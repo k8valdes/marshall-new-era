@@ -1,16 +1,16 @@
 ---
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
+import PageBanner from '../components/PageBanner.astro';
 import marshallSchool from '../assets/illustrations/marshall-school.png';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <Base title="About" description="Who the Marshall–New Era Neighborhood Association is, what we do, and the story of the historic Marshall School.">
+  <PageBanner title="About MNENA" accent="Nice to meet you" image={marshallSchool} position="center 42%" />
   <section class="section">
     <div class="container narrow">
-      <p class="accent-script">Nice to meet you</p>
-      <h1>About MNENA</h1>
       <p>
         Midtown Sacramento is a great place to live, and Marshall–New Era is one
         of those wonderful neighborhoods. MNENA members are your neighbors — we

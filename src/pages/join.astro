@@ -1,12 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
+import PageBanner from '../components/PageBanner.astro';
+import homesBridge from '../assets/illustrations/homes-bridge.png';
 ---
 
 <Base title="Join Us" description="Become a voting member of the Marshall–New Era Neighborhood Association — $20/yr for households, $35 for businesses.">
+  <PageBanner title="Join the neighborhood association" accent="Come on in" image={homesBridge} position="center 30%" />
   <section class="section">
     <div class="container narrow">
-      <p class="accent-script">Come on in</p>
-      <h1>Join the neighborhood association</h1>
       <p>
         Membership is annual (January–December) and gets you a vote in how the
         neighborhood shapes itself. Join after September 1st and your

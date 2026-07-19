@@ -7,6 +7,7 @@ import EventCard from '../components/EventCard.astro';
 import NewsThumb from '../components/NewsThumb.astro';
 import GridMotif from '../components/GridMotif.astro';
 import homesBridge from '../assets/illustrations/homes-bridge.png';
+import cityscapeArt from '../assets/illustrations/cityscape.png';
 import marshallSchool from '../assets/illustrations/marshall-school.png';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -92,7 +93,6 @@ const schoolTimeline = [
         </p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href={`${base}/join/`}>Become a member — $20/yr</a>
-          <a class="btn btn-secondary" href={`${base}/events/`}>See what's happening</a>
         </div>
       </div>
     </div>
@@ -121,6 +121,36 @@ const schoolTimeline = [
             </div>
           </article>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container matters">
+      <div class="img-frame matters-art">
+        <Image
+          src={cityscapeArt}
+          alt="Flat vector illustration of Midtown Sacramento — the gold Tower Bridge and Capitol among layered green trees and homes"
+          width={880}
+        />
+      </div>
+      <div>
+        <p class="section-label">Why your contribution matters</p>
+        <h2>This is your neighborhood</h2>
+        <p>
+          Whether you've lived here for 20 years or just moved in, your voice
+          matters. When you get involved with MNENA, you help:
+        </p>
+        <ul>
+          <li>Advocate for the things that matter to our neighborhood — safety, livability, sustainability, and equity</li>
+          <li>Plan and participate in fun, meaningful events that bring us together</li>
+          <li>Connect with local leaders and city agencies to make real change</li>
+          <li>Strengthen the ties that turn neighbors into friends</li>
+        </ul>
+        <p>
+          There's no minimum commitment — just a shared investment in where we live.
+        </p>
+        <a class="btn btn-primary" href={`${base}/join/`}>Get involved</a>
       </div>
     </div>
   </section>
@@ -219,7 +249,7 @@ const schoolTimeline = [
   .hero {
     position: relative;
     overflow: hidden;
-    min-height: 620px;
+    min-height: 420px;
     display: flex;
     align-items: center;
   }
@@ -229,51 +259,75 @@ const schoolTimeline = [
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 70%;
+    object-position: center 72%;
   }
   .hero-layout {
     position: relative;
     width: 100%;
     display: flex;
-    justify-content: flex-end;
-    padding-block: var(--space-2xl);
+    justify-content: flex-start;
+    padding-block: var(--space-xl);
   }
   .welcome-card {
     background: rgba(255, 255, 255, 0.93);
     backdrop-filter: blur(4px);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-raised);
-    padding: var(--space-xl);
-    padding-top: 72px;
-    max-width: 30rem;
+    padding: var(--space-lg) var(--space-xl);
+    padding-top: 56px;
+    max-width: 27rem;
     position: relative;
-    margin-top: 48px;
+    margin-top: 40px;
     text-align: center;
   }
   .welcome-badge {
     position: absolute;
-    top: -56px;
+    top: -44px;
     left: 50%;
     transform: translateX(-50%);
+    width: 88px;
+    height: 88px;
     filter: drop-shadow(0 4px 12px rgba(0, 68, 71, 0.3));
   }
   .welcome-card h1 {
-    font-size: 1.9rem;
+    font-size: 1.6rem;
+  }
+  .welcome-card p {
+    font-size: 0.95rem;
+    margin-bottom: var(--space-sm);
   }
   .welcome-card .accent-script {
     margin-bottom: 0;
+    font-size: 1.8rem;
   }
   .hero-ctas {
     display: flex;
     gap: var(--space-md);
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: var(--space-md);
+    margin-top: var(--space-sm);
   }
   @media (max-width: 800px) {
     .hero { min-height: 0; }
     .hero-layout { justify-content: center; }
-    .welcome-card { margin-top: 220px; }
+    .welcome-card { margin-top: 150px; }
+  }
+
+  /* ---------- why it matters ---------- */
+  .matters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-xl);
+    align-items: center;
+  }
+  .matters ul {
+    padding-left: 1.2rem;
+  }
+  .matters li {
+    margin-bottom: var(--space-xs);
+  }
+  .matters-art {
+    box-shadow: var(--shadow-card);
   }
 
   /* ---------- get involved ---------- */

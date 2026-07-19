@@ -1,5 +1,15 @@
-<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flat vector illustration of a survey clipboard with checkmarks and a colorful map of neighborhood blocks, Capitol dome in the skyline behind">
-<g transform="translate(-800 0)">
+// Generates the three "get involved" spot illustrations as windows onto ONE
+// continuous 2400x600 panorama — side by side on the page, the skyline,
+// canopy, ground, and path flow across all three cards. Each card adds its
+// own foreground subject. Run: node scripts/build-spot-illustrations.mjs
+import fs from 'node:fs';
+import path from 'node:path';
+
+const ROOT = new URL('..', import.meta.url).pathname;
+const OUT = path.join(ROOT, 'public/illustrations');
+
+// ---------- shared panorama background (0..2400 x 0..600) ----------
+const PANORAMA = `
   <rect width="2400" height="600" fill="#7AB6A4"/>
   <g fill="#F7ECCC">
     <ellipse cx="140" cy="80" rx="58" ry="20"/><ellipse cx="184" cy="66" rx="36" ry="15"/>
@@ -62,8 +72,48 @@
   <rect y="440" width="2400" height="14" fill="#4C8F3D"/>
   <!-- one sand path winding through all three scenes -->
   <path d="M0 566 C 300 522 500 596 800 552 C 1100 508 1300 592 1600 550 C 1900 508 2150 588 2400 540 L2400 600 L0 600 Z" fill="#FBDD9F"/>
-</g>
+`;
 
+// ---------- per-card foregrounds (local 0..800 coordinates) ----------
+const FG_MEETING = `
+  <path d="M340 600 L385 454 H415 L460 600 Z" fill="#F3CB4A"/>
+  <g>
+    <rect x="250" y="250" width="300" height="204" fill="#004447"/>
+    <rect x="250" y="250" width="300" height="14" fill="#01332F"/>
+    <path d="M235 250 H565 L541 212 H259 Z" fill="#01332F"/>
+    <path d="M400 118 a62 62 0 0 1 62 62 v14 h-124 v-14 a62 62 0 0 1 62 -62 Z" fill="#004447"/>
+    <path d="M400 132 a48 48 0 0 1 48 48 v8 h-96 v-8 a48 48 0 0 1 48 -48 Z" fill="#F7ECCC"/>
+    <g stroke="#004447" stroke-width="7">
+      <line x1="400" y1="188" x2="400" y2="136"/>
+      <line x1="400" y1="188" x2="368" y2="150"/>
+      <line x1="400" y1="188" x2="432" y2="150"/>
+    </g>
+    <rect x="335" y="194" width="130" height="18" fill="#01332F"/>
+    <rect x="368" y="358" width="64" height="96" rx="4" fill="#F3CB4A"/>
+    <rect x="396" y="358" width="8" height="96" fill="#004447"/>
+    <g fill="#7CD1E8">
+      <rect x="278" y="290" width="52" height="66" rx="3"/>
+      <rect x="470" y="290" width="52" height="66" rx="3"/>
+      <rect x="278" y="380" width="52" height="60" rx="3"/>
+      <rect x="470" y="380" width="52" height="60" rx="3"/>
+    </g>
+    <g fill="#004447">
+      <rect x="300" y="290" width="7" height="66"/><rect x="492" y="290" width="7" height="66"/>
+      <rect x="300" y="380" width="7" height="60"/><rect x="492" y="380" width="7" height="60"/>
+    </g>
+  </g>
+  <g>
+    <rect x="176" y="120" width="150" height="84" rx="22" fill="#F3CB4A"/>
+    <path d="M232 200 l16 30 22-30 Z" fill="#F3CB4A"/>
+    <circle cx="226" cy="162" r="9" fill="#004447"/><circle cx="256" cy="162" r="9" fill="#004447"/><circle cx="286" cy="162" r="9" fill="#004447"/>
+    <rect x="486" y="96" width="150" height="84" rx="22" fill="#F7ECCC"/>
+    <path d="M568 176 l14 28 22-28 Z" fill="#F7ECCC"/>
+    <rect x="512" y="124" width="98" height="10" rx="5" fill="#004447"/>
+    <rect x="512" y="146" width="70" height="10" rx="5" fill="#479FB3"/>
+  </g>
+`;
+
+const FG_SURVEY = `
   <g transform="translate(96 220) rotate(-4)">
     <rect x="-18" y="-18" width="260" height="240" rx="14" fill="#F7ECCC"/>
     <g>
@@ -111,5 +161,72 @@
     <path d="M0 0 L-34 17 L0 34 Z" fill="#F7ECCC"/>
     <path d="M-34 17 L-16 8 L-16 26 Z" fill="#004447"/>
   </g>
+`;
 
+const FG_GARDEN = `
+  <g>
+    <g transform="translate(90 445)">
+      <rect x="0" y="0" width="270" height="76" rx="10" fill="#004447"/>
+      <rect x="12" y="-16" width="246" height="26" rx="7" fill="#01332F"/>
+      <g stroke="#368A59" stroke-width="9" stroke-linecap="round">
+        <line x1="55" y1="-16" x2="55" y2="-88"/><line x1="135" y1="-16" x2="135" y2="-100"/><line x1="215" y1="-16" x2="215" y2="-84"/>
+      </g>
+      <circle cx="55" cy="-98" r="23" fill="#5DA145"/><circle cx="135" cy="-112" r="26" fill="#5DA145"/><circle cx="215" cy="-94" r="22" fill="#5DA145"/>
+      <circle cx="42" cy="-84" r="10" fill="#EC8A1F"/><circle cx="148" cy="-98" r="11" fill="#EC8A1F"/><circle cx="226" cy="-80" r="9" fill="#EC8A1F"/>
+      <circle cx="68" cy="-108" r="8" fill="#F3CB4A"/><circle cx="122" cy="-124" r="8" fill="#F3CB4A"/>
+    </g>
+    <g transform="translate(410 470)">
+      <rect x="0" y="0" width="230" height="66" rx="10" fill="#004447"/>
+      <rect x="12" y="-15" width="206" height="24" rx="7" fill="#01332F"/>
+      <g fill="#5DA145">
+        <path d="M45 -15 c-18 -22 -18 -38 0 -50 c18 12 18 28 0 50 Z"/>
+        <path d="M115 -15 c-18 -22 -18 -38 0 -50 c18 12 18 28 0 50 Z"/>
+        <path d="M185 -15 c-18 -22 -18 -38 0 -50 c18 12 18 28 0 50 Z"/>
+      </g>
+    </g>
+  </g>
+  <g>
+    <g stroke="#368A59" stroke-width="10" stroke-linecap="round">
+      <line x1="700" y1="470" x2="700" y2="330"/>
+      <line x1="740" y1="480" x2="740" y2="360"/>
+    </g>
+    <path d="M700 380 C678 370 668 350 670 332 C690 340 700 356 700 380 Z" fill="#5DA145"/>
+    <path d="M700 420 C722 410 732 390 730 372 C710 380 700 396 700 420 Z" fill="#5DA145"/>
+    <path d="M740 410 C718 400 710 382 712 366 C730 373 740 388 740 410 Z" fill="#5DA145"/>
+    <ellipse cx="700" cy="322" rx="12" ry="24" fill="#F3CB4A"/>
+    <ellipse cx="740" cy="352" rx="10" ry="20" fill="#F3CB4A"/>
+  </g>
+  <g transform="translate(500 400)">
+    <rect x="20" y="0" width="16" height="92" fill="#01332F"/>
+    <rect x="104" y="0" width="16" height="92" fill="#01332F"/>
+    <rect x="-10" y="-64" width="160" height="74" rx="12" fill="#F7ECCC"/>
+    <rect x="8" y="-46" width="124" height="12" rx="6" fill="#004447"/>
+    <rect x="24" y="-24" width="92" height="12" rx="6" fill="#5DA145"/>
+  </g>
+  <g transform="translate(300 540)">
+    <rect x="0" y="0" width="56" height="40" rx="8" fill="#479FB3"/>
+    <path d="M0 10 L-30 -6 L-26 4 L0 20 Z" fill="#479FB3"/>
+    <circle cx="-30" cy="-4" r="8" fill="#479FB3"/>
+    <path d="M56 8 a20 20 0 0 1 0 24" stroke="#479FB3" stroke-width="8" fill="none"/>
+    <g stroke="#7CD1E8" stroke-width="5" stroke-linecap="round">
+      <line x1="-40" y1="4" x2="-46" y2="16"/><line x1="-32" y1="8" x2="-36" y2="20"/>
+    </g>
+  </g>
+`;
+
+const cards = [
+  { file: 'spot-meeting.svg', offset: 0, fg: FG_MEETING, label: 'Flat vector illustration of a neighborhood meeting hall with a fanlight window and speech bubbles, downtown Sacramento skyline behind' },
+  { file: 'spot-survey.svg', offset: 800, fg: FG_SURVEY, label: 'Flat vector illustration of a survey clipboard with checkmarks and a colorful map of neighborhood blocks, Capitol dome in the skyline behind' },
+  { file: 'spot-garden.svg', offset: 1600, fg: FG_GARDEN, label: 'Flat vector illustration of raised community garden beds with tomatoes, sprouts, and corn, downtown skyline behind' },
+];
+
+fs.mkdirSync(OUT, { recursive: true });
+for (const c of cards) {
+  const svg = `<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${c.label}">
+<g transform="translate(${-c.offset} 0)">${PANORAMA}</g>
+${c.fg}
 </svg>
+`;
+  fs.writeFileSync(path.join(OUT, c.file), svg);
+}
+console.log('spot illustrations written (continuous panorama, offsets 0/800/1600)');

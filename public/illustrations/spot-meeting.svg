@@ -1,37 +1,74 @@
-<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flat vector illustration of a neighborhood meeting hall with a fanlight window and speech bubbles">
-  <!-- sky -->
-  <rect width="800" height="600" fill="#7AB6A4"/>
-  <!-- clouds -->
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flat vector illustration of a neighborhood meeting hall with a fanlight window and speech bubbles, downtown Sacramento skyline behind">
+<g transform="translate(0 0)">
+  <rect width="2400" height="600" fill="#7AB6A4"/>
   <g fill="#F7ECCC">
-    <ellipse cx="130" cy="80" rx="58" ry="20"/><ellipse cx="172" cy="66" rx="38" ry="16"/>
-    <ellipse cx="672" cy="110" rx="64" ry="22"/><ellipse cx="620" cy="96" rx="36" ry="15"/>
+    <ellipse cx="140" cy="80" rx="58" ry="20"/><ellipse cx="184" cy="66" rx="36" ry="15"/>
+    <ellipse cx="680" cy="110" rx="62" ry="21"/><ellipse cx="630" cy="96" rx="34" ry="14"/>
+    <ellipse cx="1080" cy="70" rx="56" ry="19"/><ellipse cx="1124" cy="58" rx="32" ry="13"/>
+    <ellipse cx="1560" cy="98" rx="60" ry="20"/><ellipse cx="1512" cy="84" rx="34" ry="14"/>
+    <ellipse cx="1980" cy="74" rx="58" ry="20"/><ellipse cx="2026" cy="60" rx="34" ry="14"/>
+    <ellipse cx="2320" cy="108" rx="54" ry="18"/>
   </g>
-  <!-- downtown silhouette -->
+  <!-- gold bridge tower anchors the far left -->
+  <g fill="#F3CB4A">
+    <rect x="42" y="140" width="16" height="245"/>
+    <rect x="84" y="140" width="16" height="245"/>
+    <rect x="42" y="140" width="58" height="14"/>
+    <rect x="42" y="216" width="58" height="12"/>
+    <path d="M46 228 L96 300 M96 228 L46 300" stroke="#F3CB4A" stroke-width="9"/>
+    <rect x="42" y="300" width="58" height="12"/>
+  </g>
+  <!-- continuous downtown silhouette -->
   <g fill="#35917E">
-    <rect x="20" y="205" width="70" height="180"/>
-    <rect x="105" y="165" width="55" height="220"/>
-    <rect x="620" y="185" width="60" height="200"/>
-    <rect x="700" y="225" width="80" height="160"/>
+    <rect x="150" y="210" width="70" height="180"/>
+    <rect x="242" y="160" width="55" height="230"/>
+    <rect x="560" y="190" width="60" height="200"/>
+    <rect x="700" y="232" width="75" height="158"/>
+    <rect x="900" y="175" width="65" height="215"/>
+    <rect x="1012" y="140" width="52" height="250"/>
+    <rect x="1310" y="200" width="60" height="190"/>
+    <rect x="1422" y="165" width="58" height="225"/>
+    <rect x="1700" y="185" width="62" height="205"/>
+    <rect x="1812" y="150" width="50" height="240"/>
+    <rect x="2120" y="195" width="66" height="195"/>
+    <rect x="2232" y="228" width="72" height="162"/>
   </g>
-  <!-- tree canopy -->
+  <!-- capitol dome, mid-panorama -->
+  <g>
+    <rect x="1108" y="300" width="120" height="90" fill="#F7ECCC"/>
+    <path d="M1132 300 v-38 a36 36 0 0 1 72 0 v38 Z" fill="#F7ECCC"/>
+    <circle cx="1168" cy="252" r="7" fill="#F7ECCC"/>
+    <g fill="#35917E">
+      <rect x="1122" y="316" width="10" height="60"/><rect x="1144" y="316" width="10" height="60"/>
+      <rect x="1166" y="316" width="10" height="60"/><rect x="1188" y="316" width="10" height="60"/>
+      <rect x="1210" y="316" width="8" height="60"/>
+    </g>
+  </g>
+  <!-- rolling tree canopy -->
   <g fill="#368A59">
-    <circle cx="70" cy="390" r="58"/><circle cx="160" cy="405" r="48"/>
-    <circle cx="655" cy="395" r="55"/><circle cx="745" cy="410" r="46"/>
+    <circle cx="70" cy="392" r="56"/><circle cx="200" cy="406" r="46"/><circle cx="340" cy="396" r="52"/>
+    <circle cx="500" cy="408" r="44"/><circle cx="640" cy="394" r="54"/><circle cx="790" cy="404" r="48"/>
+    <circle cx="930" cy="392" r="52"/><circle cx="1070" cy="406" r="46"/><circle cx="1230" cy="398" r="50"/>
+    <circle cx="1380" cy="408" r="44"/><circle cx="1520" cy="392" r="54"/><circle cx="1660" cy="404" r="48"/>
+    <circle cx="1800" cy="394" r="52"/><circle cx="1950" cy="406" r="46"/><circle cx="2090" cy="396" r="52"/>
+    <circle cx="2230" cy="408" r="44"/><circle cx="2360" cy="394" r="52"/>
   </g>
   <g fill="#2B6E49">
-    <circle cx="20" cy="415" r="44"/><circle cx="790" cy="430" r="48"/>
+    <circle cx="0" cy="420" r="44"/><circle cx="420" cy="424" r="40"/><circle cx="860" cy="420" r="42"/>
+    <circle cx="1300" cy="424" r="40"/><circle cx="1740" cy="420" r="42"/><circle cx="2180" cy="424" r="40"/><circle cx="2400" cy="418" r="44"/>
   </g>
   <!-- ground -->
-  <rect y="440" width="800" height="160" fill="#5DA145"/>
-  <rect y="440" width="800" height="14" fill="#4C8F3D"/>
-  <!-- gold path -->
+  <rect y="440" width="2400" height="160" fill="#5DA145"/>
+  <rect y="440" width="2400" height="14" fill="#4C8F3D"/>
+  <!-- one sand path winding through all three scenes -->
+  <path d="M0 566 C 300 522 500 596 800 552 C 1100 508 1300 592 1600 550 C 1900 508 2150 588 2400 540 L2400 600 L0 600 Z" fill="#FBDD9F"/>
+</g>
+
   <path d="M340 600 L385 454 H415 L460 600 Z" fill="#F3CB4A"/>
-  <!-- meeting hall -->
   <g>
     <rect x="250" y="250" width="300" height="204" fill="#004447"/>
     <rect x="250" y="250" width="300" height="14" fill="#01332F"/>
     <path d="M235 250 H565 L541 212 H259 Z" fill="#01332F"/>
-    <!-- fanlight arch -->
     <path d="M400 118 a62 62 0 0 1 62 62 v14 h-124 v-14 a62 62 0 0 1 62 -62 Z" fill="#004447"/>
     <path d="M400 132 a48 48 0 0 1 48 48 v8 h-96 v-8 a48 48 0 0 1 48 -48 Z" fill="#F7ECCC"/>
     <g stroke="#004447" stroke-width="7">
@@ -40,10 +77,8 @@
       <line x1="400" y1="188" x2="432" y2="150"/>
     </g>
     <rect x="335" y="194" width="130" height="18" fill="#01332F"/>
-    <!-- door -->
     <rect x="368" y="358" width="64" height="96" rx="4" fill="#F3CB4A"/>
     <rect x="396" y="358" width="8" height="96" fill="#004447"/>
-    <!-- windows -->
     <g fill="#7CD1E8">
       <rect x="278" y="290" width="52" height="66" rx="3"/>
       <rect x="470" y="290" width="52" height="66" rx="3"/>
@@ -55,7 +90,6 @@
       <rect x="300" y="380" width="7" height="60"/><rect x="492" y="380" width="7" height="60"/>
     </g>
   </g>
-  <!-- speech bubbles -->
   <g>
     <rect x="176" y="120" width="150" height="84" rx="22" fill="#F3CB4A"/>
     <path d="M232 200 l16 30 22-30 Z" fill="#F3CB4A"/>
@@ -65,4 +99,5 @@
     <rect x="512" y="124" width="98" height="10" rx="5" fill="#004447"/>
     <rect x="512" y="146" width="70" height="10" rx="5" fill="#479FB3"/>
   </g>
+
 </svg>
