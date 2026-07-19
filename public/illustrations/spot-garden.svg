@@ -1,0 +1,88 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flat vector illustration of raised community garden beds with sprouting vegetables and corn">
+  <!-- sky -->
+  <rect width="800" height="600" fill="#7AB6A4"/>
+  <!-- clouds -->
+  <g fill="#F7ECCC">
+    <ellipse cx="170" cy="86" rx="62" ry="21"/><ellipse cx="216" cy="70" rx="36" ry="15"/>
+    <ellipse cx="640" cy="70" rx="58" ry="20"/><ellipse cx="592" cy="58" rx="32" ry="13"/>
+  </g>
+  <!-- downtown silhouette -->
+  <g fill="#35917E">
+    <rect x="60" y="180" width="62" height="200"/>
+    <rect x="140" y="145" width="50" height="235"/>
+    <rect x="600" y="170" width="56" height="210"/>
+    <rect x="672" y="205" width="72" height="175"/>
+  </g>
+  <!-- gold bridge tower, far left -->
+  <g fill="#F3CB4A">
+    <rect x="8" y="150" width="16" height="230"/>
+    <rect x="46" y="150" width="16" height="230"/>
+    <rect x="8" y="150" width="54" height="14"/>
+    <rect x="8" y="222" width="54" height="12"/>
+    <path d="M12 234 L58 300 M58 234 L12 300" stroke="#F3CB4A" stroke-width="9"/>
+    <rect x="8" y="300" width="54" height="12"/>
+  </g>
+  <!-- tree canopy -->
+  <g fill="#368A59">
+    <circle cx="250" cy="380" r="52"/><circle cx="560" cy="385" r="50"/><circle cx="740" cy="392" r="54"/>
+  </g>
+  <!-- ground -->
+  <rect y="420" width="800" height="180" fill="#5DA145"/>
+  <rect y="420" width="800" height="12" fill="#4C8F3D"/>
+  <!-- sand path curving through -->
+  <path d="M0 560 C200 520 300 590 420 545 C540 500 660 560 800 522 L800 600 L0 600 Z" fill="#FBDD9F"/>
+  <!-- corn stalks, right -->
+  <g>
+    <g stroke="#368A59" stroke-width="10" stroke-linecap="round">
+      <line x1="672" y1="470" x2="672" y2="330"/>
+      <line x1="712" y1="480" x2="712" y2="360"/>
+    </g>
+    <path d="M672 380 C650 370 640 350 642 332 C662 340 672 356 672 380 Z" fill="#5DA145"/>
+    <path d="M672 420 C694 410 704 390 702 372 C682 380 672 396 672 420 Z" fill="#5DA145"/>
+    <path d="M712 410 C690 400 682 382 684 366 C702 373 712 388 712 410 Z" fill="#5DA145"/>
+    <ellipse cx="672" cy="322" rx="12" ry="24" fill="#F3CB4A"/>
+    <ellipse cx="712" cy="352" rx="10" ry="20" fill="#F3CB4A"/>
+  </g>
+  <!-- raised beds -->
+  <g>
+    <g transform="translate(90 445)">
+      <rect x="0" y="0" width="270" height="76" rx="10" fill="#004447"/>
+      <rect x="12" y="-16" width="246" height="26" rx="7" fill="#01332F"/>
+      <!-- tomato plants -->
+      <g stroke="#368A59" stroke-width="9" stroke-linecap="round">
+        <line x1="55" y1="-16" x2="55" y2="-88"/><line x1="135" y1="-16" x2="135" y2="-100"/><line x1="215" y1="-16" x2="215" y2="-84"/>
+      </g>
+      <circle cx="55" cy="-98" r="23" fill="#5DA145"/><circle cx="135" cy="-112" r="26" fill="#5DA145"/><circle cx="215" cy="-94" r="22" fill="#5DA145"/>
+      <circle cx="42" cy="-84" r="10" fill="#EC8A1F"/><circle cx="148" cy="-98" r="11" fill="#EC8A1F"/><circle cx="226" cy="-80" r="9" fill="#EC8A1F"/>
+      <circle cx="68" cy="-108" r="8" fill="#F3CB4A"/><circle cx="122" cy="-124" r="8" fill="#F3CB4A"/>
+    </g>
+    <g transform="translate(410 470)">
+      <rect x="0" y="0" width="230" height="66" rx="10" fill="#004447"/>
+      <rect x="12" y="-15" width="206" height="24" rx="7" fill="#01332F"/>
+      <!-- sprouts -->
+      <g fill="#5DA145">
+        <path d="M45 -15 c-18 -22 -18 -38 0 -50 c18 12 18 28 0 50 Z"/>
+        <path d="M115 -15 c-18 -22 -18 -38 0 -50 c18 12 18 28 0 50 Z"/>
+        <path d="M185 -15 c-18 -22 -18 -38 0 -50 c18 12 18 28 0 50 Z"/>
+      </g>
+    </g>
+  </g>
+  <!-- garden sign -->
+  <g transform="translate(548 400)">
+    <rect x="20" y="0" width="16" height="92" fill="#01332F"/>
+    <rect x="104" y="0" width="16" height="92" fill="#01332F"/>
+    <rect x="-10" y="-64" width="160" height="74" rx="12" fill="#F7ECCC"/>
+    <rect x="8" y="-46" width="124" height="12" rx="6" fill="#004447"/>
+    <rect x="24" y="-24" width="92" height="12" rx="6" fill="#5DA145"/>
+  </g>
+  <!-- watering can -->
+  <g transform="translate(320 540)">
+    <rect x="0" y="0" width="56" height="40" rx="8" fill="#479FB3"/>
+    <path d="M0 10 L-30 -6 L-26 4 L0 20 Z" fill="#479FB3"/>
+    <circle cx="-30" cy="-4" r="8" fill="#479FB3"/>
+    <path d="M56 8 a20 20 0 0 1 0 24" stroke="#479FB3" stroke-width="8" fill="none"/>
+    <g stroke="#7CD1E8" stroke-width="5" stroke-linecap="round">
+      <line x1="-40" y1="4" x2="-46" y2="16"/><line x1="-32" y1="8" x2="-36" y2="20"/>
+    </g>
+  </g>
+</svg>

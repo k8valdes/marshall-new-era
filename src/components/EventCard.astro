@@ -1,6 +1,5 @@
 ---
 import { render } from 'astro:content';
-import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
@@ -22,11 +21,6 @@ const dateFmt = data.date.toLocaleDateString('en-US', {
 ---
 
 <article class="card event-card">
-  {data.image && (
-    <div class="img-frame event-art">
-      <Image src={data.image} alt={data.imageAlt ?? ''} width={720} />
-    </div>
-  )}
   <div class="event-body">
     <div class="date-chip">
       <span class="month">{data.date.toLocaleDateString('en-US', { month: 'short', timeZone: 'UTC' })}</span>
@@ -49,12 +43,6 @@ const dateFmt = data.date.toLocaleDateString('en-US', {
   .event-card {
     padding: 0;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-  }
-  .event-art {
-    border-radius: 0;
-    aspect-ratio: 21 / 9;
   }
   .event-body {
     display: flex;

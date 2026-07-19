@@ -4,7 +4,10 @@ import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import Wave from '../components/Wave.astro';
 import EventCard from '../components/EventCard.astro';
-import cityscape from '../assets/illustrations/cityscape.png';
+import NewsThumb from '../components/NewsThumb.astro';
+import GridMotif from '../components/GridMotif.astro';
+import homesBridge from '../assets/illustrations/homes-bridge.png';
+import marshallSchool from '../assets/illustrations/marshall-school.png';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const today = new Date();
@@ -18,37 +21,119 @@ const events = (await getCollection('events'))
 const news = (await getCollection('news'))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 3);
+
+const surveyHref = `${base}/news/neighborhood-survey/`;
+
+const getInvolved = [
+  {
+    title: 'Come to a meeting',
+    art: `${base}/illustrations/spot-meeting.svg`,
+    alt: 'Flat vector illustration of a meeting hall with a fanlight window and speech bubbles',
+    text: '3rd Monday of every month, 6pm at the Society Church Building (2711 B St). Potluck snacks, City updates, and zero pressure — everyone is welcome.',
+    href: `${base}/events/`,
+    cta: 'See all events',
+  },
+  {
+    title: 'Take a survey',
+    art: `${base}/illustrations/spot-survey.svg`,
+    alt: 'Flat vector illustration of a survey clipboard with checkmarks beside a colorful map of neighborhood blocks',
+    text: "Five minutes of your opinions shapes what we work on next — events, safety, the garden, all of it. Tell us what your blocks need.",
+    href: surveyHref,
+    cta: 'Take the survey',
+  },
+  {
+    title: 'Visit the community garden',
+    art: `${base}/illustrations/spot-garden.svg`,
+    alt: 'Flat vector illustration of raised garden beds with tomatoes, sprouts, and corn',
+    text: 'Reborn in 2024 at 26th & B — 41 plots, potlucks, and a Friend of the Garden program for everyone on the waitlist.',
+    href: `${base}/community-garden/`,
+    cta: 'Visit the garden page',
+  },
+];
+
+const schoolTimeline = [
+  { year: '1903', note: 'Built — the oldest school in Sacramento, designed by Rudolf Herold (old City Hall too)' },
+  { year: '1976', note: 'Closed as an elementary school over building-code standards' },
+  { year: '1983', note: 'Renovated and reopened as an Adult Education Center' },
+  { year: '2009', note: 'A brief final act as a Montessori school' },
+  { year: '2023', note: 'Sold — Reynen & Bardis Homes want neighbors’ input on what comes next' },
+];
 ---
 
 <Base title="Home">
-  <section class="hero section-teal on-dark">
-    <div class="container hero-inner">
-      <div>
-        <p class="accent-script">Welcome to the neighborhood!</p>
-        <h1>This is our neighborhood.<br />Let's shape it together.</h1>
-        <p class="hero-sub">
-          We're the Marshall–New Era Neighborhood Association — your neighbors in
-          Midtown Sacramento, working (and partying, and gardening) to make this a
-          place every resident can enjoy.
+  <section class="hero">
+    <Image
+      class="hero-bg"
+      src={homesBridge}
+      alt=""
+      width={1920}
+      loading="eager"
+    />
+    <div class="container hero-layout">
+      <div class="welcome-card">
+        <img
+          class="welcome-badge"
+          src={`${base}/brand/circle-white-full-color.svg`}
+          alt=""
+          width="112"
+          height="112"
+        />
+        <p class="accent-script">Welcome to</p>
+        <h1>Marshall School &amp; New&nbsp;Era&nbsp;Park</h1>
+        <p>
+          We're glad you're here! MNENA is a volunteer-led neighborhood
+          association serving the Marshall School and New Era Park
+          neighborhoods in midtown Sacramento.
+        </p>
+        <p>
+          Whether you're new or a longtime resident, MNENA connects neighbors,
+          uplifts local voices, and supports the people and places that make
+          this area special.
         </p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href={`${base}/join/`}>Become a member — $20/yr</a>
           <a class="btn btn-secondary" href={`${base}/events/`}>See what's happening</a>
         </div>
       </div>
-      <div class="img-frame hero-art">
-        <Image
-          src={cityscape}
-          alt="Flat vector illustration of Midtown Sacramento — the gold Tower Bridge and Capitol among layered green trees and neighborhood homes"
-          width={880}
-          loading="eager"
-        />
+    </div>
+  </section>
+
+  <section class="section" id="get-involved">
+    <div class="container" style="text-align:center;">
+      <GridMotif seed={3} columns={9} rows={1} size={12} class="motif-center" />
+      <h2>Who we are &amp; how to get involved</h2>
+      <p class="narrow" style="margin-inline:auto;">
+        MNENA exists to protect what we love about this community while shaping
+        its future together. From cleanups to advocacy, social gatherings to
+        city planning, our work is fueled by the belief that engaged neighbors
+        make strong neighborhoods.
+      </p>
+      <div class="grid-3 involved-grid">
+        {getInvolved.map((item) => (
+          <article class="card involved-card">
+            <div class="img-frame involved-art">
+              <img src={item.art} alt={item.alt} width="800" height="600" loading="lazy" />
+            </div>
+            <div class="involved-body">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+              <a class="btn btn-secondary" href={item.href}>{item.cta}</a>
+            </div>
+          </article>
+        ))}
       </div>
     </div>
   </section>
-  <Wave color="var(--color-surface-inverse)" />
 
-  <section class="section">
+  <section class="survey-band">
+    <div class="container survey-band-inner">
+      <GridMotif seed={11} columns={5} rows={3} size={14} />
+      <p class="survey-band-text">Take the survey and tell us what your neighborhood needs</p>
+      <a class="btn btn-primary" href={surveyHref}>Take the 5-min survey</a>
+    </div>
+  </section>
+
+  <section class="section section-soft">
     <div class="container">
       <p class="section-label">Coming up</p>
       <h2>Get out and meet each other</h2>
@@ -59,37 +144,6 @@ const news = (await getCollection('news'))
     </div>
   </section>
 
-  <section class="section section-soft">
-    <div class="container split">
-      <div>
-        <p class="section-label">Who we are</p>
-        <h2>Just neighbors who love it here</h2>
-        <p>
-          MNENA members are your neighbors. We all live in Sacramento's Midtown
-          and are passionate about keeping it wonderful — advocating with the
-          City, tracking development, organizing cleanups, and throwing a
-          genuinely good holiday party.
-        </p>
-        <p>
-          Only about 3% of the neighborhood are members so far. Renters,
-          homeowners, longtimers, brand-new arrivals: you all count, and
-          you're all welcome.
-        </p>
-        <a class="btn btn-primary" href={`${base}/about/`}>More about us</a>
-      </div>
-      <div>
-        <p class="section-label">The garden</p>
-        <h2>Our community garden is reborn 🌱</h2>
-        <p>
-          After two years sitting vacant, we secured a 5-year lease and
-          restarted the garden at 26th &amp; B. All 41 plots snapped up fast —
-          join the waitlist or become a Friend of the Garden for $20/yr.
-        </p>
-        <a class="btn btn-secondary" href={`${base}/community-garden/`}>Visit the garden page</a>
-      </div>
-    </div>
-  </section>
-
   <section class="section">
     <div class="container">
       <p class="section-label">News</p>
@@ -97,11 +151,7 @@ const news = (await getCollection('news'))
       <div class="grid-3">
         {news.map((post) => (
           <article class="card news-card">
-            {post.data.image && (
-              <div class="img-frame overlay news-thumb">
-                <Image src={post.data.image} alt="" width={640} />
-              </div>
-            )}
+            <NewsThumb post={post} class="news-thumb" />
             <div class="news-body">
               <p class="section-label">{post.data.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}</p>
               <h3><a href={`${base}/news/${post.id}/`}>{post.data.title}</a></h3>
@@ -114,7 +164,41 @@ const news = (await getCollection('news'))
     </div>
   </section>
 
-  <section class="section section-teal on-dark newsletter">
+  <section class="section section-teal on-dark history">
+    <div class="container">
+      <div class="history-head">
+        <div>
+          <p class="accent-script">Since 1903</p>
+          <h2>The Old Marshall School</h2>
+          <p class="narrow">
+            The gold building with the fanlight window isn't just our logo —
+            it's the oldest school in Sacramento, and the anchor of our corner
+            of Midtown. Its story is still being written, and neighbors have a
+            say in the next chapter.
+          </p>
+          <a class="btn btn-secondary" href={`${base}/about/`}>The full story</a>
+        </div>
+        <div class="img-frame history-art">
+          <Image
+            src={marshallSchool}
+            alt="Flat vector illustration of the historic Marshall School — gold, American Classical Revival, arched fanlight window"
+            width={880}
+          />
+        </div>
+      </div>
+      <ol class="timeline">
+        {schoolTimeline.map((t) => (
+          <li>
+            <span class="timeline-year">{t.year}</span>
+            <span class="timeline-note">{t.note}</span>
+          </li>
+        ))}
+      </ol>
+      <GridMotif seed={19} columns={26} rows={1} size={11} class="motif-center" />
+    </div>
+  </section>
+
+  <section class="section newsletter">
     <div class="container narrow" style="text-align:center;">
       <p class="accent-script">Don't miss the fun</p>
       <h2>Get 2–3 emails a month on what's happening</h2>
@@ -131,56 +215,190 @@ const news = (await getCollection('news'))
 </Base>
 
 <style>
+  /* ---------- hero: full-bleed illustration behind the welcome card ---------- */
   .hero {
-    padding-block: var(--space-2xl) var(--space-xl);
-  }
-  .hero-inner {
+    position: relative;
+    overflow: hidden;
+    min-height: 620px;
     display: flex;
     align-items: center;
-    gap: var(--space-2xl);
   }
-  .hero h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 70%;
   }
-  .hero-sub {
-    font-size: 1.15rem;
-    max-width: 34rem;
+  .hero-layout {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-block: var(--space-2xl);
+  }
+  .welcome-card {
+    background: rgba(255, 255, 255, 0.93);
+    backdrop-filter: blur(4px);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-raised);
+    padding: var(--space-xl);
+    padding-top: 72px;
+    max-width: 30rem;
+    position: relative;
+    margin-top: 48px;
+    text-align: center;
+  }
+  .welcome-badge {
+    position: absolute;
+    top: -56px;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: drop-shadow(0 4px 12px rgba(0, 68, 71, 0.3));
+  }
+  .welcome-card h1 {
+    font-size: 1.9rem;
+  }
+  .welcome-card .accent-script {
+    margin-bottom: 0;
   }
   .hero-ctas {
     display: flex;
     gap: var(--space-md);
     flex-wrap: wrap;
-    margin-top: var(--space-lg);
-  }
-  .hero-art {
-    flex: 1 1 340px;
-    max-width: 480px;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-raised);
+    justify-content: center;
+    margin-top: var(--space-md);
   }
   @media (max-width: 800px) {
-    .hero-inner { flex-direction: column; }
-    .hero-art { max-width: 100%; }
+    .hero { min-height: 0; }
+    .hero-layout { justify-content: center; }
+    .welcome-card { margin-top: 220px; }
   }
+
+  /* ---------- get involved ---------- */
+  .motif-center {
+    margin: 0 auto var(--space-md);
+  }
+  .involved-grid {
+    margin-top: var(--space-xl);
+    text-align: left;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-lg);
+  }
+  .involved-card {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .involved-art {
+    border-radius: 0;
+    aspect-ratio: 4 / 3;
+  }
+  .involved-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .involved-body {
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    flex: 1;
+  }
+  .involved-body .btn {
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  /* ---------- survey band ---------- */
+  .survey-band {
+    background: var(--color-sand);
+    padding-block: var(--space-lg);
+  }
+  .survey-band-inner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+    flex-wrap: wrap;
+  }
+  .survey-band-text {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: var(--color-deep-teal);
+    margin: 0;
+    flex: 1;
+    min-width: 240px;
+  }
+
+  /* ---------- news cards ---------- */
   .news-card {
     padding: 0;
     overflow: hidden;
   }
-  .news-thumb {
-    border-radius: 0;
-    aspect-ratio: 16 / 9;
+  :global(.news-thumb) {
+    border-radius: 0 !important;
+    aspect-ratio: 16 / 10;
   }
   .news-body {
     padding: var(--space-lg);
   }
-  .grid-3 {
+
+  /* ---------- history ---------- */
+  .history-head {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--space-lg);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-xl);
+    align-items: center;
+    margin-bottom: var(--space-xl);
   }
-  .split {
+  .history-art {
+    box-shadow: var(--shadow-raised);
+  }
+  .timeline {
+    list-style: none;
+    margin: 0 0 var(--space-xl);
+    padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--space-2xl);
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--space-lg);
+    border-top: 2px solid rgba(243, 203, 74, 0.5);
+    padding-top: var(--space-lg);
+  }
+  .timeline li {
+    display: grid;
+    gap: var(--space-xs);
+    position: relative;
+  }
+  .timeline li::before {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--space-lg) - 7px);
+    left: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--color-sun-gold);
+  }
+  .timeline-year {
+    font-family: var(--font-heading);
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--color-sun-gold);
+    line-height: 1;
+  }
+  .timeline-note {
+    font-size: 0.9rem;
+  }
+
+  /* ---------- newsletter (now on light) ---------- */
+  .newsletter {
+    background: var(--color-background-soft);
   }
 </style>

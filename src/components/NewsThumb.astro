@@ -1,0 +1,37 @@
+---
+// Every news card gets an image: the post's photo with the branded overlay
+// treatment, or — when the post has none — a neighborhood-blocks mosaic tile
+// seeded by the post id (stable per post, varied across the list).
+import { Image } from 'astro:assets';
+import GridMotif from './GridMotif.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  post: CollectionEntry<'news'>;
+  class?: string;
+}
+
+const { post, class: className = '' } = Astro.props;
+const seed = [...post.id].reduce((a, c) => a + c.charCodeAt(0), 7);
+---
+
+{post.data.image ? (
+  <div class:list={['img-frame', 'overlay', 'branded', className]}>
+    <Image src={post.data.image} alt="" width={760} />
+  </div>
+) : (
+  <div class:list={['img-frame', 'news-fallback', className]}>
+    <GridMotif seed={seed} columns={7} rows={4} size={26} />
+  </div>
+)}
+
+<style>
+  .news-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+      radial-gradient(ellipse at 50% 120%, rgba(0, 68, 71, 0.18), transparent 60%),
+      var(--color-seafoam-sky);
+  }
+</style>

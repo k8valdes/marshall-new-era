@@ -170,6 +170,12 @@ img {
   pointer-events: none;
 }
 
+/* branded photo treatment: slight desaturation + warm contrast pulls mixed
+   photos toward the palette; pair with .overlay for the teal gradient */
+.img-frame.branded img {
+  filter: saturate(0.78) contrast(1.06) sepia(0.12);
+}
+
 /* ---------- Prose (markdown content) ---------- */
 .prose {
   max-width: 46rem;

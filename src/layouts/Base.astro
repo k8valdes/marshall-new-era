@@ -37,11 +37,12 @@ const nav = [
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href={`${base}/`}>
-          <img src={`${base}/brand/badge-knockout-color.svg`} alt="" width="44" height="50" />
-          <span class="brand-text">
-            <strong>Marshall–New Era</strong>
-            <span>Neighborhood Association</span>
-          </span>
+          <img
+            src={`${base}/brand/lockup-long-teal-bg.svg`}
+            alt="Marshall–New Era Neighborhood Association"
+            height="56"
+            style="display:block; height:56px; width:auto;"
+          />
         </a>
         <nav aria-label="Main">
           <ul class="nav-list">
@@ -118,24 +119,7 @@ const nav = [
   .brand {
     display: flex;
     align-items: center;
-    gap: var(--space-sm);
     text-decoration: none;
-  }
-  .brand-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.15;
-  }
-  .brand-text strong {
-    font-family: var(--font-heading);
-    color: var(--color-cream);
-    font-size: 1.05rem;
-  }
-  .brand-text span {
-    color: var(--color-sky-blue);
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
   }
   .nav-list {
     display: flex;

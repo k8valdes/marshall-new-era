@@ -1,0 +1,68 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flat vector illustration of a neighborhood meeting hall with a fanlight window and speech bubbles">
+  <!-- sky -->
+  <rect width="800" height="600" fill="#7AB6A4"/>
+  <!-- clouds -->
+  <g fill="#F7ECCC">
+    <ellipse cx="130" cy="80" rx="58" ry="20"/><ellipse cx="172" cy="66" rx="38" ry="16"/>
+    <ellipse cx="672" cy="110" rx="64" ry="22"/><ellipse cx="620" cy="96" rx="36" ry="15"/>
+  </g>
+  <!-- downtown silhouette -->
+  <g fill="#35917E">
+    <rect x="20" y="205" width="70" height="180"/>
+    <rect x="105" y="165" width="55" height="220"/>
+    <rect x="620" y="185" width="60" height="200"/>
+    <rect x="700" y="225" width="80" height="160"/>
+  </g>
+  <!-- tree canopy -->
+  <g fill="#368A59">
+    <circle cx="70" cy="390" r="58"/><circle cx="160" cy="405" r="48"/>
+    <circle cx="655" cy="395" r="55"/><circle cx="745" cy="410" r="46"/>
+  </g>
+  <g fill="#2B6E49">
+    <circle cx="20" cy="415" r="44"/><circle cx="790" cy="430" r="48"/>
+  </g>
+  <!-- ground -->
+  <rect y="440" width="800" height="160" fill="#5DA145"/>
+  <rect y="440" width="800" height="14" fill="#4C8F3D"/>
+  <!-- gold path -->
+  <path d="M340 600 L385 454 H415 L460 600 Z" fill="#F3CB4A"/>
+  <!-- meeting hall -->
+  <g>
+    <rect x="250" y="250" width="300" height="204" fill="#004447"/>
+    <rect x="250" y="250" width="300" height="14" fill="#01332F"/>
+    <path d="M235 250 H565 L541 212 H259 Z" fill="#01332F"/>
+    <!-- fanlight arch -->
+    <path d="M400 118 a62 62 0 0 1 62 62 v14 h-124 v-14 a62 62 0 0 1 62 -62 Z" fill="#004447"/>
+    <path d="M400 132 a48 48 0 0 1 48 48 v8 h-96 v-8 a48 48 0 0 1 48 -48 Z" fill="#F7ECCC"/>
+    <g stroke="#004447" stroke-width="7">
+      <line x1="400" y1="188" x2="400" y2="136"/>
+      <line x1="400" y1="188" x2="368" y2="150"/>
+      <line x1="400" y1="188" x2="432" y2="150"/>
+    </g>
+    <rect x="335" y="194" width="130" height="18" fill="#01332F"/>
+    <!-- door -->
+    <rect x="368" y="358" width="64" height="96" rx="4" fill="#F3CB4A"/>
+    <rect x="396" y="358" width="8" height="96" fill="#004447"/>
+    <!-- windows -->
+    <g fill="#7CD1E8">
+      <rect x="278" y="290" width="52" height="66" rx="3"/>
+      <rect x="470" y="290" width="52" height="66" rx="3"/>
+      <rect x="278" y="380" width="52" height="60" rx="3"/>
+      <rect x="470" y="380" width="52" height="60" rx="3"/>
+    </g>
+    <g fill="#004447">
+      <rect x="300" y="290" width="7" height="66"/><rect x="492" y="290" width="7" height="66"/>
+      <rect x="300" y="380" width="7" height="60"/><rect x="492" y="380" width="7" height="60"/>
+    </g>
+  </g>
+  <!-- speech bubbles -->
+  <g>
+    <rect x="176" y="120" width="150" height="84" rx="22" fill="#F3CB4A"/>
+    <path d="M232 200 l16 30 22-30 Z" fill="#F3CB4A"/>
+    <circle cx="226" cy="162" r="9" fill="#004447"/><circle cx="256" cy="162" r="9" fill="#004447"/><circle cx="286" cy="162" r="9" fill="#004447"/>
+    <rect x="486" y="96" width="150" height="84" rx="22" fill="#F7ECCC"/>
+    <path d="M568 176 l14 28 22-28 Z" fill="#F7ECCC"/>
+    <rect x="512" y="124" width="98" height="10" rx="5" fill="#004447"/>
+    <rect x="512" y="146" width="70" height="10" rx="5" fill="#479FB3"/>
+  </g>
+</svg>

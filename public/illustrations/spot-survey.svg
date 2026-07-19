@@ -1,0 +1,75 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flat vector illustration of a survey clipboard with checkmarks over a colorful map of neighborhood blocks">
+  <!-- sky -->
+  <rect width="800" height="600" fill="#7AB6A4"/>
+  <!-- clouds -->
+  <g fill="#F7ECCC">
+    <ellipse cx="150" cy="76" rx="60" ry="20"/><ellipse cx="196" cy="62" rx="36" ry="15"/>
+    <ellipse cx="660" cy="96" rx="62" ry="21"/><ellipse cx="612" cy="82" rx="34" ry="14"/>
+  </g>
+  <!-- downtown silhouette -->
+  <g fill="#35917E">
+    <rect x="40" y="190" width="66" height="200"/>
+    <rect x="128" y="150" width="52" height="240"/>
+    <rect x="640" y="175" width="58" height="215"/>
+    <rect x="714" y="215" width="70" height="175"/>
+  </g>
+  <!-- tree canopy -->
+  <g fill="#368A59">
+    <circle cx="80" cy="392" r="54"/><circle cx="710" cy="398" r="56"/>
+  </g>
+  <!-- ground -->
+  <rect y="430" width="800" height="170" fill="#5DA145"/>
+  <rect y="430" width="800" height="14" fill="#4C8F3D"/>
+  <!-- neighborhood blocks map (the sign's grid motif) -->
+  <g transform="translate(96 220) rotate(-4)">
+    <rect x="-18" y="-18" width="260" height="240" rx="14" fill="#F7ECCC"/>
+    <g>
+      <rect x="0" y="0" width="48" height="48" rx="6" fill="#5DA145"/>
+      <rect x="58" y="0" width="48" height="48" rx="6" fill="#479FB3"/>
+      <rect x="116" y="0" width="48" height="48" rx="6" fill="#F3CB4A"/>
+      <rect x="174" y="0" width="48" height="48" rx="6" fill="#004447"/>
+      <rect x="0" y="58" width="48" height="48" rx="6" fill="#EC8A1F"/>
+      <rect x="58" y="58" width="48" height="48" rx="6" fill="#004447"/>
+      <rect x="116" y="58" width="48" height="48" rx="6" fill="#7CD1E8"/>
+      <rect x="174" y="58" width="48" height="48" rx="6" fill="#5DA145"/>
+      <rect x="0" y="116" width="48" height="48" rx="6" fill="#479FB3"/>
+      <rect x="58" y="116" width="48" height="48" rx="6" fill="#F3CB4A"/>
+      <rect x="116" y="116" width="48" height="48" rx="6" fill="#368A59"/>
+      <rect x="174" y="116" width="48" height="48" rx="6" fill="#EC8A1F"/>
+      <rect x="0" y="174" width="48" height="30" rx="6" fill="#004447"/>
+      <rect x="58" y="174" width="48" height="30" rx="6" fill="#7CD1E8"/>
+      <rect x="116" y="174" width="48" height="30" rx="6" fill="#5DA145"/>
+      <rect x="174" y="174" width="48" height="30" rx="6" fill="#479FB3"/>
+    </g>
+    <!-- star marker -->
+    <path d="M198 -6 l7.6 15.4 17 2.5 -12.3 12 2.9 16.9 -15.2 -8 -15.2 8 2.9 -16.9 -12.3 -12 17 -2.5 Z" fill="#EC8A1F" stroke="#F7ECCC" stroke-width="5"/>
+  </g>
+  <!-- clipboard -->
+  <g transform="translate(430 130) rotate(3)">
+    <rect x="0" y="0" width="250" height="360" rx="18" fill="#004447"/>
+    <rect x="16" y="34" width="218" height="308" rx="10" fill="#F7ECCC"/>
+    <rect x="86" y="-16" width="78" height="44" rx="10" fill="#479FB3"/>
+    <rect x="106" y="-4" width="38" height="18" rx="8" fill="#F7ECCC"/>
+    <!-- question rows: checkbox + line -->
+    <g>
+      <rect x="38" y="62" width="30" height="30" rx="7" fill="#5DA145"/>
+      <path d="M45 77 l8 9 14-16" stroke="#F7ECCC" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <rect x="82" y="70" width="130" height="12" rx="6" fill="#004447"/>
+      <rect x="38" y="118" width="30" height="30" rx="7" fill="#5DA145"/>
+      <path d="M45 133 l8 9 14-16" stroke="#F7ECCC" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <rect x="82" y="126" width="106" height="12" rx="6" fill="#479FB3"/>
+      <rect x="38" y="174" width="30" height="30" rx="7" fill="#F3CB4A"/>
+      <rect x="82" y="182" width="130" height="12" rx="6" fill="#004447"/>
+      <rect x="38" y="230" width="30" height="30" rx="7" fill="#F3CB4A"/>
+      <rect x="82" y="238" width="88" height="12" rx="6" fill="#479FB3"/>
+      <rect x="38" y="292" width="174" height="12" rx="6" fill="#7CD1E8"/>
+    </g>
+  </g>
+  <!-- pencil -->
+  <g transform="translate(388 470) rotate(-18)">
+    <rect x="0" y="0" width="190" height="34" rx="6" fill="#EC8A1F"/>
+    <rect x="150" y="0" width="40" height="34" rx="6" fill="#479FB3"/>
+    <path d="M0 0 L-34 17 L0 34 Z" fill="#F7ECCC"/>
+    <path d="M-34 17 L-16 8 L-16 26 Z" fill="#004447"/>
+  </g>
+</svg>
